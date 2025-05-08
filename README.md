@@ -6,3 +6,5 @@ This is a fork of kilo code. Here's the goals:
  - [ ] interface debuggers and observability tools
  - [ ] remote system execution
 
+At the same time pulling down from kilo code and fixing the outstanding bugs in their github.
+
