@@ -1,5 +1,6 @@
 This is a fork of kilo code. Here's the goals:
-
+ - [ ] Auditable, re-entrant, transferrable, forkable conversation flows
+ - [ ] deep git integrations with blame, branch, and issue analysis
  - [ ] fixes all the usability problems with model selection with price and context windows
  - [ ] allows for multiple models to be used as a cascade
  - [ ] provide conversational ids and exposure to other applications
