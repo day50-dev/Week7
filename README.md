@@ -1,5 +1,5 @@
 This is a fork of kilo code. Here's the goals:
- - [ ] Maintain clean mergeability with kilo code  
+ - [x] Maintain clean mergeability with kilo code, always being ahead (except for things like the readme, which this differs from)
  - [ ] Auditable, re-entrant, transferrable, forkable conversation flows (see [dejaview](https://github.com/kristopolous/dejaview))
  - [ ] deep git integrations with blame, branch, and issue analysis (via langchain)
  - [ ] fixes all the usability problems with model selection with price and context windows
