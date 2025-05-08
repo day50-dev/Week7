@@ -10,4 +10,3 @@ This is a fork of kilo code. Here's the goals:
  - [ ] permit for it to be api/able and surfaceable outside of vscode (server mode)
 
 At the same time pulling down from kilo code and fixing the outstanding bugs in their github.
-
