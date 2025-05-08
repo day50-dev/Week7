@@ -1,4 +1,5 @@
 This is a fork of kilo code. Here's the goals:
+ - [ ] Maintain clean mergeability with kilo code  
  - [ ] Auditable, re-entrant, transferrable, forkable conversation flows
  - [ ] deep git integrations with blame, branch, and issue analysis
  - [ ] fixes all the usability problems with model selection with price and context windows
