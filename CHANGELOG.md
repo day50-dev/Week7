@@ -1,5 +1,16 @@
 # kilo-code
 
+## 4.22.0
+
+### Minor Changes
+
+- Switch mode icons from unicode emojis to codicons
+
+### Patch Changes
+
+- Fixed UI Issue - Unreadable transparent section at bottom of chat textArea. Thanks to @agape-apps for reporting this issue! See [Kilo-Org/kilocode#306](https://github.com/Kilo-Org/kilocode/issues/306)
+- Fix feedback button overlapping selection action button in history view
+
 ## 4.21.0
 
 ### Minor Changes

@@ -18,6 +18,7 @@ export enum DropdownOptionType {
 export interface DropdownOption {
 	value: string
 	label: string
+	codicon?: string // kilocode_change
 	disabled?: boolean
 	type?: DropdownOptionType
 	pinned?: boolean
@@ -183,6 +184,7 @@ export const SelectDropdown = React.memo(
 				[onChange, options],
 			)
 
+			debugger
 			return (
 				<Popover open={open} onOpenChange={onOpenChange} data-testid="dropdown-root">
 					<PopoverTrigger
@@ -200,6 +202,16 @@ export const SelectDropdown = React.memo(
 							triggerClassName,
 						)}>
 						<CaretUpIcon className="pointer-events-none opacity-80 flex-shrink-0 size-3" />
+
+						{/* kilocode_change start */}
+						{selectedOption?.codicon && (
+							<span
+								slot="start"
+								style={{ fontSize: "12px" }}
+								className={cn("codicon opacity-80 mr", selectedOption?.codicon)}
+							/>
+						)}
+						{/* kilocode_change end */}
 						<span className="truncate">{displayText}</span>
 					</PopoverTrigger>
 					<PopoverContent
@@ -281,6 +293,16 @@ export const SelectDropdown = React.memo(
 														renderItem(option)
 													) : (
 														<>
+															{/* kilocode_change start */}
+															<span
+																slot="start"
+																style={{ fontSize: "12px" }}
+																className={cn(
+																	"codicon opacity-80 mr-1.5",
+																	option.codicon,
+																)}
+															/>
+															{/* kilocode_change end */}
 															<span>{option.label}</span>
 															{option.value === value && (
 																<Check className="ml-auto size-4 p-0.5" />
