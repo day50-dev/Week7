@@ -1,6 +1,6 @@
 ![Week7_125](https://github.com/user-attachments/assets/649c6302-aa97-4c36-a96c-75a5ab7123ea)
 
-# Week7
+# WEEK7
 Good software takes more than vibes.
 
 This is a fork of kilo code.  Here's the goals:
