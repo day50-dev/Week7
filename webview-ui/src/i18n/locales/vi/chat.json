@@ -1,5 +1,5 @@
 {
-	"greeting": "Kilo Code có thể giúp gì cho bạn?",
+	"greeting": "W7 có thể giúp gì cho bạn?",
 	"task": {
 		"title": "Nhiệm vụ",
 		"seeMore": "Xem thêm",
@@ -112,7 +112,7 @@
 	"diffError": {
 		"title": "Chỉnh sửa không thành công"
 	},
-	"troubleMessage": "Kilo Code đang gặp sự cố...",
+	"troubleMessage": "W7 đang gặp sự cố...",
 	"apiRequest": {
 		"title": "Yêu cầu API",
 		"failed": "Yêu cầu API thất bại",
@@ -138,47 +138,47 @@
 		"current": "Hiện tại"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code muốn lấy hướng dẫn chi tiết để hỗ trợ nhiệm vụ hiện tại"
+		"wantsToFetch": "W7 muốn lấy hướng dẫn chi tiết để hỗ trợ nhiệm vụ hiện tại"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code muốn đọc tệp này:",
-		"wantsToReadOutsideWorkspace": "Kilo Code muốn đọc tệp này bên ngoài không gian làm việc:",
-		"didRead": "Kilo Code đã đọc tệp này:",
-		"wantsToEdit": "Kilo Code muốn chỉnh sửa tệp này:",
-		"wantsToEditOutsideWorkspace": "Kilo Code muốn chỉnh sửa tệp này bên ngoài không gian làm việc:",
-		"wantsToCreate": "Kilo Code muốn tạo một tệp mới:",
-		"wantsToSearchReplace": "Kilo Code muốn thực hiện tìm kiếm và thay thế trong tệp này:",
-		"didSearchReplace": "Kilo Code đã thực hiện tìm kiếm và thay thế trong tệp này:",
-		"wantsToInsert": "Kilo Code muốn chèn nội dung vào tệp này:",
-		"wantsToInsertWithLineNumber": "Kilo Code muốn chèn nội dung vào dòng {{lineNumber}} của tệp này:",
-		"wantsToInsertAtEnd": "Kilo Code muốn thêm nội dung vào cuối tệp này:"
+		"wantsToRead": "W7 muốn đọc tệp này:",
+		"wantsToReadOutsideWorkspace": "W7 muốn đọc tệp này bên ngoài không gian làm việc:",
+		"didRead": "W7 đã đọc tệp này:",
+		"wantsToEdit": "W7 muốn chỉnh sửa tệp này:",
+		"wantsToEditOutsideWorkspace": "W7 muốn chỉnh sửa tệp này bên ngoài không gian làm việc:",
+		"wantsToCreate": "W7 muốn tạo một tệp mới:",
+		"wantsToSearchReplace": "W7 muốn thực hiện tìm kiếm và thay thế trong tệp này:",
+		"didSearchReplace": "W7 đã thực hiện tìm kiếm và thay thế trong tệp này:",
+		"wantsToInsert": "W7 muốn chèn nội dung vào tệp này:",
+		"wantsToInsertWithLineNumber": "W7 muốn chèn nội dung vào dòng {{lineNumber}} của tệp này:",
+		"wantsToInsertAtEnd": "W7 muốn thêm nội dung vào cuối tệp này:"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code muốn xem các tệp cấp cao nhất trong thư mục này:",
-		"didViewTopLevel": "Kilo Code đã xem các tệp cấp cao nhất trong thư mục này:",
-		"wantsToViewRecursive": "Kilo Code muốn xem đệ quy tất cả các tệp trong thư mục này:",
-		"didViewRecursive": "Kilo Code đã xem đệ quy tất cả các tệp trong thư mục này:",
-		"wantsToViewDefinitions": "Kilo Code muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này:",
-		"didViewDefinitions": "Kilo Code đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này:",
-		"wantsToSearch": "Kilo Code muốn tìm kiếm trong thư mục này cho <code>{{regex}}</code>:",
-		"didSearch": "Kilo Code đã tìm kiếm trong thư mục này cho <code>{{regex}}</code>:"
+		"wantsToViewTopLevel": "W7 muốn xem các tệp cấp cao nhất trong thư mục này:",
+		"didViewTopLevel": "W7 đã xem các tệp cấp cao nhất trong thư mục này:",
+		"wantsToViewRecursive": "W7 muốn xem đệ quy tất cả các tệp trong thư mục này:",
+		"didViewRecursive": "W7 đã xem đệ quy tất cả các tệp trong thư mục này:",
+		"wantsToViewDefinitions": "W7 muốn xem tên định nghĩa mã nguồn được sử dụng trong thư mục này:",
+		"didViewDefinitions": "W7 đã xem tên định nghĩa mã nguồn được sử dụng trong thư mục này:",
+		"wantsToSearch": "W7 muốn tìm kiếm trong thư mục này cho <code>{{regex}}</code>:",
+		"didSearch": "W7 đã tìm kiếm trong thư mục này cho <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Kết quả lệnh",
 	"response": "Phản hồi",
 	"arguments": "Tham số",
 	"mcp": {
-		"wantsToUseTool": "Kilo Code muốn sử dụng một công cụ trên máy chủ MCP {{serverName}}:",
-		"wantsToAccessResource": "Kilo Code muốn truy cập một tài nguyên trên máy chủ MCP {{serverName}}:"
+		"wantsToUseTool": "W7 muốn sử dụng một công cụ trên máy chủ MCP {{serverName}}:",
+		"wantsToAccessResource": "W7 muốn truy cập một tài nguyên trên máy chủ MCP {{serverName}}:"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code muốn chuyển sang chế độ <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Kilo Code muốn chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}",
-		"didSwitch": "Kilo Code đã chuyển sang chế độ <code>{{mode}}</code>",
-		"didSwitchWithReason": "Kilo Code đã chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}"
+		"wantsToSwitch": "W7 muốn chuyển sang chế độ <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "W7 muốn chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}",
+		"didSwitch": "W7 đã chuyển sang chế độ <code>{{mode}}</code>",
+		"didSwitchWithReason": "W7 đã chuyển sang chế độ <code>{{mode}}</code> vì: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code muốn tạo một nhiệm vụ phụ mới trong chế độ <code>{{mode}}</code>:",
-		"wantsToFinish": "Kilo Code muốn hoàn thành nhiệm vụ phụ này",
+		"wantsToCreate": "W7 muốn tạo một nhiệm vụ phụ mới trong chế độ <code>{{mode}}</code>:",
+		"wantsToFinish": "W7 muốn hoàn thành nhiệm vụ phụ này",
 		"newTaskContent": "Hướng dẫn nhiệm vụ phụ",
 		"completionContent": "Nhiệm vụ phụ đã hoàn thành",
 		"resultContent": "Kết quả nhiệm vụ phụ",
@@ -186,7 +186,7 @@
 		"completionInstructions": "Nhiệm vụ phụ đã hoàn thành! Bạn có thể xem lại kết quả và đề xuất các sửa đổi hoặc bước tiếp theo. Nếu mọi thứ có vẻ tốt, hãy xác nhận để trả kết quả về nhiệm vụ chính."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code có một câu hỏi:"
+		"hasQuestion": "W7 có một câu hỏi:"
 	},
 	"taskCompleted": "Nhiệm vụ hoàn thành",
 	"powershell": {
@@ -195,7 +195,7 @@
 	"autoApprove": {
 		"title": "Tự động phê duyệt:",
 		"none": "Không",
-		"description": "Tự động phê duyệt cho phép Kilo Code thực hiện hành động mà không cần xin phép. Chỉ bật cho các hành động bạn hoàn toàn tin tưởng. Cấu hình chi tiết hơn có sẵn trong <settingsLink>Cài đặt</settingsLink>."
+		"description": "Tự động phê duyệt cho phép W7 thực hiện hành động mà không cần xin phép. Chỉ bật cho các hành động bạn hoàn toàn tin tưởng. Cấu hình chi tiết hơn có sẵn trong <settingsLink>Cài đặt</settingsLink>."
 	},
 	"reasoning": {
 		"thinking": "Đang suy nghĩ",
@@ -215,7 +215,7 @@
 		"detailsDiscussLinks": "Nhận thêm chi tiết và thảo luận tại <discordLink>Discord</discordLink> và <redditLink>Reddit</redditLink> 🚀"
 	},
 	"browser": {
-		"rooWantsToUse": "Kilo Code muốn sử dụng trình duyệt:",
+		"rooWantsToUse": "W7 muốn sử dụng trình duyệt:",
 		"consoleLogs": "Nhật ký bảng điều khiển",
 		"noNewLogs": "(Không có nhật ký mới)",
 		"screenshot": "Ảnh chụp màn hình trình duyệt",

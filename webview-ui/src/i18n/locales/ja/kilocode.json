@@ -1,13 +1,13 @@
 {
 	"welcome": {
-		"greeting": "Kilo Codeはあなたのために何ができますか？",
+		"greeting": "W7はあなたのために何ができますか？",
 		"introText": "私は利用可能な最速のAIモデルでトレーニングされており、あなたのために超高速でコードを生成する準備ができています！",
-		"ctaButton": "Kilo Codeを無料で試す",
+		"ctaButton": "W7を無料で試す",
 		"manualModeButton": "自分のAPIキーを使う"
 	},
 	"lowCreditWarning": {
 		"addCredit": "クレジットを追加",
-		"lowBalance": "Kilo Codeの残高が少なくなっています"
+		"lowBalance": "W7の残高が少なくなっています"
 	},
 	"notifications": {
 		"toolRequest": "ツールのリクエストが承認待ちです",

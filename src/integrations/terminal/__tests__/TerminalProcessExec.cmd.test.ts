@@ -83,7 +83,7 @@ async function testCmdCommand(
 			executeCommand: jest.fn(),
 			cwd: vscode.Uri.file("C:\\test\\path"),
 		},
-		name: "Kilo Code",
+		name: "W7",
 		processId: Promise.resolve(123),
 		creationOptions: {},
 		exitStatus: undefined,

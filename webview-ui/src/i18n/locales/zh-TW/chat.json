@@ -1,5 +1,5 @@
 {
-	"greeting": "Kilo Code 能為您做什麼？",
+	"greeting": "W7 能為您做什麼？",
 	"task": {
 		"title": "工作",
 		"seeMore": "顯示更多",
@@ -112,7 +112,7 @@
 	"diffError": {
 		"title": "編輯失敗"
 	},
-	"troubleMessage": "Kilo Code 遇到問題...",
+	"troubleMessage": "W7 遇到問題...",
 	"apiRequest": {
 		"title": "API 請求",
 		"failed": "API 請求失敗",
@@ -138,47 +138,47 @@
 		"current": "目前"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code 想要取得詳細指示以協助目前任務"
+		"wantsToFetch": "W7 想要取得詳細指示以協助目前任務"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code 想要讀取此檔案：",
-		"wantsToReadOutsideWorkspace": "Kilo Code 想要讀取此工作區外的檔案：",
-		"didRead": "Kilo Code 已讀取此檔案：",
-		"wantsToEdit": "Kilo Code 想要編輯此檔案：",
-		"wantsToEditOutsideWorkspace": "Kilo Code 想要編輯此工作區外的檔案：",
-		"wantsToCreate": "Kilo Code 想要建立新檔案：",
-		"wantsToSearchReplace": "Kilo Code 想要在此檔案中搜尋和取代：",
-		"didSearchReplace": "Kilo Code 已在此檔案執行搜尋和取代：",
-		"wantsToInsert": "Kilo Code 想要在此檔案中插入內容：",
-		"wantsToInsertWithLineNumber": "Kilo Code 想要在此檔案第 {{lineNumber}} 行插入內容：",
-		"wantsToInsertAtEnd": "Kilo Code 想要在此檔案末尾新增內容："
+		"wantsToRead": "W7 想要讀取此檔案：",
+		"wantsToReadOutsideWorkspace": "W7 想要讀取此工作區外的檔案：",
+		"didRead": "W7 已讀取此檔案：",
+		"wantsToEdit": "W7 想要編輯此檔案：",
+		"wantsToEditOutsideWorkspace": "W7 想要編輯此工作區外的檔案：",
+		"wantsToCreate": "W7 想要建立新檔案：",
+		"wantsToSearchReplace": "W7 想要在此檔案中搜尋和取代：",
+		"didSearchReplace": "W7 已在此檔案執行搜尋和取代：",
+		"wantsToInsert": "W7 想要在此檔案中插入內容：",
+		"wantsToInsertWithLineNumber": "W7 想要在此檔案第 {{lineNumber}} 行插入內容：",
+		"wantsToInsertAtEnd": "W7 想要在此檔案末尾新增內容："
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code 想要檢視此目錄中最上層的檔案：",
-		"didViewTopLevel": "Kilo Code 已檢視此目錄中最上層的檔案：",
-		"wantsToViewRecursive": "Kilo Code 想要遞迴檢視此目錄中的所有檔案：",
-		"didViewRecursive": "Kilo Code 已遞迴檢視此目錄中的所有檔案：",
-		"wantsToViewDefinitions": "Kilo Code 想要檢視此目錄中使用的原始碼定義名稱：",
-		"didViewDefinitions": "Kilo Code 已檢視此目錄中使用的原始碼定義名稱：",
-		"wantsToSearch": "Kilo Code 想要在此目錄中搜尋 <code>{{regex}}</code>：",
-		"didSearch": "Kilo Code 已在此目錄中搜尋 <code>{{regex}}</code>："
+		"wantsToViewTopLevel": "W7 想要檢視此目錄中最上層的檔案：",
+		"didViewTopLevel": "W7 已檢視此目錄中最上層的檔案：",
+		"wantsToViewRecursive": "W7 想要遞迴檢視此目錄中的所有檔案：",
+		"didViewRecursive": "W7 已遞迴檢視此目錄中的所有檔案：",
+		"wantsToViewDefinitions": "W7 想要檢視此目錄中使用的原始碼定義名稱：",
+		"didViewDefinitions": "W7 已檢視此目錄中使用的原始碼定義名稱：",
+		"wantsToSearch": "W7 想要在此目錄中搜尋 <code>{{regex}}</code>：",
+		"didSearch": "W7 已在此目錄中搜尋 <code>{{regex}}</code>："
 	},
 	"commandOutput": "命令輸出",
 	"response": "回應",
 	"arguments": "參數",
 	"mcp": {
-		"wantsToUseTool": "Kilo Code 想要在 {{serverName}} MCP 伺服器上使用工具：",
-		"wantsToAccessResource": "Kilo Code 想要存取 {{serverName}} MCP 伺服器上的資源："
+		"wantsToUseTool": "W7 想要在 {{serverName}} MCP 伺服器上使用工具：",
+		"wantsToAccessResource": "W7 想要存取 {{serverName}} MCP 伺服器上的資源："
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code 想要切換至 <code>{{mode}}</code> 模式",
-		"wantsToSwitchWithReason": "Kilo Code 想要切換至 <code>{{mode}}</code> 模式，原因：{{reason}}",
-		"didSwitch": "Kilo Code 已切換至 <code>{{mode}}</code> 模式",
-		"didSwitchWithReason": "Kilo Code 已切換至 <code>{{mode}}</code> 模式，原因：{{reason}}"
+		"wantsToSwitch": "W7 想要切換至 <code>{{mode}}</code> 模式",
+		"wantsToSwitchWithReason": "W7 想要切換至 <code>{{mode}}</code> 模式，原因：{{reason}}",
+		"didSwitch": "W7 已切換至 <code>{{mode}}</code> 模式",
+		"didSwitchWithReason": "W7 已切換至 <code>{{mode}}</code> 模式，原因：{{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code 想要在 <code>{{mode}}</code> 模式下建立新的子工作：",
-		"wantsToFinish": "Kilo Code 想要完成此子工作",
+		"wantsToCreate": "W7 想要在 <code>{{mode}}</code> 模式下建立新的子工作：",
+		"wantsToFinish": "W7 想要完成此子工作",
 		"newTaskContent": "子工作指示",
 		"completionContent": "子工作已完成",
 		"resultContent": "子工作結果",
@@ -186,7 +186,7 @@
 		"completionInstructions": "子工作已完成！您可以檢閱結果並提出修正或下一步建議。如果一切看起來良好，請確認以將結果傳回主工作。"
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code 有一個問題："
+		"hasQuestion": "W7 有一個問題："
 	},
 	"taskCompleted": "工作完成",
 	"powershell": {
@@ -195,7 +195,7 @@
 	"autoApprove": {
 		"title": "自動核准：",
 		"none": "無",
-		"description": "自動核准讓 Kilo Code 可以在無需徵求您同意的情況下執行動作。請僅對您完全信任的動作啟用此功能。您可以在<settingsLink>設定</settingsLink>中進行更詳細的調整。"
+		"description": "自動核准讓 W7 可以在無需徵求您同意的情況下執行動作。請僅對您完全信任的動作啟用此功能。您可以在<settingsLink>設定</settingsLink>中進行更詳細的調整。"
 	},
 	"reasoning": {
 		"thinking": "思考中",
@@ -215,7 +215,7 @@
 		"detailsDiscussLinks": "在 <discordLink>Discord</discordLink> 和 <redditLink>Reddit</redditLink> 取得更多詳細資訊並參與討論 🚀"
 	},
 	"browser": {
-		"rooWantsToUse": "Kilo Code 想要使用瀏覽器：",
+		"rooWantsToUse": "W7 想要使用瀏覽器：",
 		"consoleLogs": "主控台記錄",
 		"noNewLogs": "（沒有新記錄）",
 		"screenshot": "瀏覽器螢幕擷圖",

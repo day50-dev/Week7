@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Kilo Code",
+		"name": "W7",
 		"description": "कोड की योजना बनाने, निर्माण करने और उसे ठीक करने के लिए ओपन सोर्स एआई कोडिंग सहायक।"
 	},
 	"number_format": {
@@ -94,7 +94,7 @@
 		"enter_valid_path": "कृपया एक वैध पाथ दर्ज करें"
 	},
 	"input": {
-		"task_prompt": "Kilo Code को क्या करना है?",
+		"task_prompt": "W7 को क्या करना है?",
 		"task_placeholder": "निर्माण करें, खोजें, कुछ पूछें"
 	}
 }

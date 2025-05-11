@@ -25,7 +25,7 @@ has_asdf_plugin() {
 }
 
 build_extension() {
-  echo "🔨 Building the Kilo Code extension..."
+  echo "🔨 Building the W7 extension..."
   cd ..
   mkdir -p bin
   npm run install-extension -- --silent --no-audit || exit 1
@@ -312,7 +312,7 @@ if [[ ! -s .env ]]; then
   cp .env.sample .env || exit 1
 fi
 
-echo "🗄️ Syncing Kilo Code evals database..."
+echo "🗄️ Syncing W7 evals database..."
 pnpm --filter @evals/db db:push &>/dev/null || exit 1
 pnpm --filter @evals/db db:enable-wal &>/dev/null || exit 1
 
@@ -326,7 +326,7 @@ fi
 if [[ ! -s "../bin/kilo-code-latest.vsix" ]]; then
   build_extension
 else
-  read -p "💻 Do you want to build a new version of the Kilo Code extension? (y/N): " build_extension
+  read -p "💻 Do you want to build a new version of the W7 extension? (y/N): " build_extension
 
   if [[ "$build_extension" =~ ^[Yy]$ ]]; then
     build_extension

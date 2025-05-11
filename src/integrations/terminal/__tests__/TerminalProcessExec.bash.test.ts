@@ -136,7 +136,7 @@ async function testTerminalCommand(
 			executeCommand: jest.fn(),
 			cwd: vscode.Uri.file("/test/path"),
 		},
-		name: "Kilo Code",
+		name: "W7",
 		processId: Promise.resolve(123),
 		creationOptions: {},
 		exitStatus: undefined,

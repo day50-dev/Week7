@@ -1,10 +1,10 @@
-# Run Kilo Code Evals
+# Run W7 Evals
 
 ## Get Started
 
 NOTE: This is MacOS only for now!
 
-Clone the Kilo Code repo:
+Clone the W7 repo:
 
 ```sh
 git clone https://github.com/Kilo-Org/kilocode.git

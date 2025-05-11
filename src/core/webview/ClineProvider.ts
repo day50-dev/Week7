@@ -633,7 +633,7 @@ export class ClineProvider extends EventEmitter<ClineProviderEvents> implements 
 						window.IMAGES_BASE_URI = "${imagesUri}"
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 					</script>
-					<title>Kilo Code</title>
+					<title>W7</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -728,7 +728,7 @@ export class ClineProvider extends EventEmitter<ClineProviderEvents> implements 
 				window.IMAGES_BASE_URI = "${imagesUri}"
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 			</script>
-            <title>Kilo Code</title>
+            <title>W7</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1016,7 +1016,7 @@ export class ClineProvider extends EventEmitter<ClineProviderEvents> implements 
 			kilocodeToken: token,
 		})
 
-		vscode.window.showInformationMessage("Kilo Code successfully configured!")
+		vscode.window.showInformationMessage("W7 successfully configured!")
 
 		if (this.getCurrentCline()) {
 			this.getCurrentCline()!.api = buildApiHandler({

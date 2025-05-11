@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Kilo Code",
+		"name": "W7",
 		"description": "Trợ lý mã hóa AI nguồn mở để lập kế hoạch, xây dựng và sửa mã."
 	},
 	"number_format": {
@@ -94,7 +94,7 @@
 		"enter_valid_path": "Vui lòng nhập đường dẫn hợp lệ"
 	},
 	"input": {
-		"task_prompt": "Bạn muốn Kilo Code làm gì?",
+		"task_prompt": "Bạn muốn W7 làm gì?",
 		"task_placeholder": "Xây dựng, tìm kiếm, hỏi điều gì đó"
 	}
 }

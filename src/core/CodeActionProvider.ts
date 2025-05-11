@@ -12,11 +12,11 @@ export type CodeActionId =
 	| "kilo-code.newTask"
 
 export const ACTION_TITLES: Record<CodeActionName, string> = {
-	EXPLAIN: "Explain with Kilo Code",
-	FIX: "Fix with Kilo Code",
-	IMPROVE: "Improve with Kilo Code",
-	ADD_TO_CONTEXT: "Add to Kilo Code",
-	NEW_TASK: "New Kilo Code Task",
+	EXPLAIN: "Explain with W7",
+	FIX: "Fix with W7",
+	IMPROVE: "Improve with W7",
+	ADD_TO_CONTEXT: "Add to W7",
+	NEW_TASK: "New W7 Task",
 } as const
 
 export const COMMAND_IDS: Record<CodeActionName, CodeActionId> = {

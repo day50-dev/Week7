@@ -7,7 +7,7 @@
 		"editModesConfig": "Mod yapılandırmasını düzenle",
 		"editGlobalModes": "Global modları düzenle",
 		"editProjectModes": "Proje modlarını düzenle (.kilocodemodes)",
-		"createModeHelpText": "Yeni bir özel mod oluşturmak için + düğmesine tıklayın veya sohbette Kilo Code'dan sizin için bir tane oluşturmasını isteyin!"
+		"createModeHelpText": "Yeni bir özel mod oluşturmak için + düğmesine tıklayın veya sohbette W7'dan sizin için bir tane oluşturmasını isteyin!"
 	},
 	"apiConfiguration": {
 		"title": "API Yapılandırması",
@@ -31,7 +31,7 @@
 	"roleDefinition": {
 		"title": "Rol Tanımı",
 		"resetToDefault": "Varsayılana sıfırla",
-		"description": "Bu mod için Kilo Code'nun uzmanlığını ve kişiliğini tanımlayın. Bu açıklama, Kilo Code'nun kendini nasıl sunduğunu ve görevlere nasıl yaklaştığını şekillendirir."
+		"description": "Bu mod için W7'nun uzmanlığını ve kişiliğini tanımlayın. Bu açıklama, W7'nun kendini nasıl sunduğunu ve görevlere nasıl yaklaştığını şekillendirir."
 	},
 	"customInstructions": {
 		"title": "Moda özgü özel talimatlar (isteğe bağlı)",
@@ -41,7 +41,7 @@
 	},
 	"globalCustomInstructions": {
 		"title": "Tüm Modlar için Özel Talimatlar",
-		"description": "Bu talimatlar tüm modlara uygulanır. Aşağıdaki moda özgü talimatlarla geliştirilebilen temel davranış seti sağlarlar.\nKilo Code'un editörünüzün görüntüleme dilinden ({{language}}) farklı bir dilde düşünmesini ve konuşmasını istiyorsanız, burada belirtebilirsiniz.",
+		"description": "Bu talimatlar tüm modlara uygulanır. Aşağıdaki moda özgü talimatlarla geliştirilebilen temel davranış seti sağlarlar.\nW7'un editörünüzün görüntüleme dilinden ({{language}}) farklı bir dilde düşünmesini ve konuşmasını istiyorsanız, burada belirtebilirsiniz.",
 		"loadFromFile": "Talimatlar ayrıca çalışma alanınızdaki <span>.kilocode/rules/</span> klasöründen de yüklenebilir (.kilocoderules kullanımdan kaldırılmıştır ve yakında çalışmayı durduracaktır)."
 	},
 	"systemPrompt": {
@@ -63,7 +63,7 @@
 		"types": {
 			"ENHANCE": {
 				"label": "Promptu Geliştir",
-				"description": "Girdileriniz için özel öneriler veya iyileştirmeler almak için prompt geliştirmeyi kullanın. Bu, Kilo Code'nun niyetinizi anlamasını ve mümkün olan en iyi yanıtları sağlamasını garanti eder. Sohbetteki ✨ simgesi aracılığıyla kullanılabilir."
+				"description": "Girdileriniz için özel öneriler veya iyileştirmeler almak için prompt geliştirmeyi kullanın. Bu, W7'nun niyetinizi anlamasını ve mümkün olan en iyi yanıtları sağlamasını garanti eder. Sohbetteki ✨ simgesi aracılığıyla kullanılabilir."
 			},
 			"EXPLAIN": {
 				"label": "Kodu Açıkla",
@@ -128,7 +128,7 @@
 		},
 		"roleDefinition": {
 			"label": "Rol Tanımı",
-			"description": "Bu mod için Kilo Code'nun uzmanlığını ve kişiliğini tanımlayın."
+			"description": "Bu mod için W7'nun uzmanlığını ve kişiliğini tanımlayın."
 		},
 		"tools": {
 			"label": "Kullanılabilir Araçlar",

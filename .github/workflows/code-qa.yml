@@ -1,4 +1,4 @@
-name: Code QA Kilo Code
+name: Code QA W7
 
 on:
   workflow_dispatch:

@@ -472,12 +472,12 @@ const ApiOptions = ({
 											},
 										})
 									}}>
-									Log out from Kilo Code
+									Log out from W7
 								</Button>
 							</div>
 						) : (
 							<VSCodeButtonLink variant="secondary" href={getKiloCodeBackendAuthUrl(uriScheme)}>
-								Log in at Kilo Code
+								Log in at W7
 							</VSCodeButtonLink>
 						))}
 					{/* kilocode_change end */}

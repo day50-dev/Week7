@@ -1,13 +1,13 @@
 {
 	"welcome": {
-		"greeting": "Co Kilo Code może dla Ciebie zrobić?",
+		"greeting": "Co W7 może dla Ciebie zrobić?",
 		"introText": "Zostałem przeszkolony najszybszymi dostępnymi modelami AI i jestem gotowy generować dla Ciebie kod z zawrotną prędkością!",
-		"ctaButton": "Wypróbuj Kilo Code za darmo",
+		"ctaButton": "Wypróbuj W7 za darmo",
 		"manualModeButton": "Użyj własnego klucza API"
 	},
 	"lowCreditWarning": {
 		"addCredit": "Dodaj kredyt",
-		"lowBalance": "Twój stan konta Kilo Code jest niski"
+		"lowBalance": "Twój stan konta W7 jest niski"
 	},
 	"notifications": {
 		"toolRequest": "Żądanie narzędzia oczekuje na zatwierdzenie",

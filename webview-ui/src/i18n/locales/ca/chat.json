@@ -1,5 +1,5 @@
 {
-	"greeting": "Què pot fer Kilo Code per tu?",
+	"greeting": "Què pot fer W7 per tu?",
 	"task": {
 		"title": "Tasca",
 		"seeMore": "Veure més",
@@ -112,7 +112,7 @@
 	"diffError": {
 		"title": "Edició fallida"
 	},
-	"troubleMessage": "Kilo Code està tenint problemes...",
+	"troubleMessage": "W7 està tenint problemes...",
 	"apiRequest": {
 		"title": "Sol·licitud API",
 		"failed": "Sol·licitud API ha fallat",
@@ -138,47 +138,47 @@
 		"current": "Actual"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code vol obtenir instruccions detallades per ajudar amb la tasca actual."
+		"wantsToFetch": "W7 vol obtenir instruccions detallades per ajudar amb la tasca actual."
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code vol llegir aquest fitxer:",
-		"wantsToReadOutsideWorkspace": "Kilo Code vol llegir aquest fitxer fora de l'espai de treball:",
-		"didRead": "Kilo Code ha llegit aquest fitxer:",
-		"wantsToEdit": "Kilo Code vol editar aquest fitxer:",
-		"wantsToEditOutsideWorkspace": "Kilo Code vol editar aquest fitxer fora de l'espai de treball:",
-		"wantsToCreate": "Kilo Code vol crear un nou fitxer:",
-		"wantsToSearchReplace": "Kilo Code vol realitzar cerca i substitució en aquest fitxer:",
-		"didSearchReplace": "Kilo Code ha realitzat cerca i substitució en aquest fitxer:",
-		"wantsToInsert": "Kilo Code vol inserir contingut en aquest fitxer:",
-		"wantsToInsertWithLineNumber": "Kilo Code vol inserir contingut a la línia {{lineNumber}} d'aquest fitxer:",
-		"wantsToInsertAtEnd": "Kilo Code vol afegir contingut al final d'aquest fitxer:"
+		"wantsToRead": "W7 vol llegir aquest fitxer:",
+		"wantsToReadOutsideWorkspace": "W7 vol llegir aquest fitxer fora de l'espai de treball:",
+		"didRead": "W7 ha llegit aquest fitxer:",
+		"wantsToEdit": "W7 vol editar aquest fitxer:",
+		"wantsToEditOutsideWorkspace": "W7 vol editar aquest fitxer fora de l'espai de treball:",
+		"wantsToCreate": "W7 vol crear un nou fitxer:",
+		"wantsToSearchReplace": "W7 vol realitzar cerca i substitució en aquest fitxer:",
+		"didSearchReplace": "W7 ha realitzat cerca i substitució en aquest fitxer:",
+		"wantsToInsert": "W7 vol inserir contingut en aquest fitxer:",
+		"wantsToInsertWithLineNumber": "W7 vol inserir contingut a la línia {{lineNumber}} d'aquest fitxer:",
+		"wantsToInsertAtEnd": "W7 vol afegir contingut al final d'aquest fitxer:"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code vol veure els fitxers de nivell superior en aquest directori:",
-		"didViewTopLevel": "Kilo Code ha vist els fitxers de nivell superior en aquest directori:",
-		"wantsToViewRecursive": "Kilo Code vol veure recursivament tots els fitxers en aquest directori:",
-		"didViewRecursive": "Kilo Code ha vist recursivament tots els fitxers en aquest directori:",
-		"wantsToViewDefinitions": "Kilo Code vol veure noms de definicions de codi font utilitzats en aquest directori:",
-		"didViewDefinitions": "Kilo Code ha vist noms de definicions de codi font utilitzats en aquest directori:",
-		"wantsToSearch": "Kilo Code vol cercar en aquest directori <code>{{regex}}</code>:",
-		"didSearch": "Kilo Code ha cercat en aquest directori <code>{{regex}}</code>:"
+		"wantsToViewTopLevel": "W7 vol veure els fitxers de nivell superior en aquest directori:",
+		"didViewTopLevel": "W7 ha vist els fitxers de nivell superior en aquest directori:",
+		"wantsToViewRecursive": "W7 vol veure recursivament tots els fitxers en aquest directori:",
+		"didViewRecursive": "W7 ha vist recursivament tots els fitxers en aquest directori:",
+		"wantsToViewDefinitions": "W7 vol veure noms de definicions de codi font utilitzats en aquest directori:",
+		"didViewDefinitions": "W7 ha vist noms de definicions de codi font utilitzats en aquest directori:",
+		"wantsToSearch": "W7 vol cercar en aquest directori <code>{{regex}}</code>:",
+		"didSearch": "W7 ha cercat en aquest directori <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Sortida de l'ordre",
 	"response": "Resposta",
 	"arguments": "Arguments",
 	"mcp": {
-		"wantsToUseTool": "Kilo Code vol utilitzar una eina al servidor MCP {{serverName}}:",
-		"wantsToAccessResource": "Kilo Code vol accedir a un recurs al servidor MCP {{serverName}}:"
+		"wantsToUseTool": "W7 vol utilitzar una eina al servidor MCP {{serverName}}:",
+		"wantsToAccessResource": "W7 vol accedir a un recurs al servidor MCP {{serverName}}:"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code vol canviar a mode <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Kilo Code vol canviar a mode <code>{{mode}}</code> perquè: {{reason}}",
-		"didSwitch": "Kilo Code ha canviat a mode <code>{{mode}}</code>",
-		"didSwitchWithReason": "Kilo Code ha canviat a mode <code>{{mode}}</code> perquè: {{reason}}"
+		"wantsToSwitch": "W7 vol canviar a mode <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "W7 vol canviar a mode <code>{{mode}}</code> perquè: {{reason}}",
+		"didSwitch": "W7 ha canviat a mode <code>{{mode}}</code>",
+		"didSwitchWithReason": "W7 ha canviat a mode <code>{{mode}}</code> perquè: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code vol crear una nova subtasca en mode <code>{{mode}}</code>:",
-		"wantsToFinish": "Kilo Code vol finalitzar aquesta subtasca",
+		"wantsToCreate": "W7 vol crear una nova subtasca en mode <code>{{mode}}</code>:",
+		"wantsToFinish": "W7 vol finalitzar aquesta subtasca",
 		"newTaskContent": "Instruccions de la subtasca",
 		"completionContent": "Subtasca completada",
 		"resultContent": "Resultats de la subtasca",
@@ -186,7 +186,7 @@
 		"completionInstructions": "Subtasca completada! Pots revisar els resultats i suggerir correccions o següents passos. Si tot sembla correcte, confirma per tornar el resultat a la tasca principal."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code té una pregunta:"
+		"hasQuestion": "W7 té una pregunta:"
 	},
 	"taskCompleted": "Tasca completada",
 	"powershell": {
@@ -195,7 +195,7 @@
 	"autoApprove": {
 		"title": "Aprovació automàtica:",
 		"none": "Cap",
-		"description": "L'aprovació automàtica permet a Kilo Code realitzar accions sense demanar permís. Activa-la només per a accions en les que confies plenament. Configuració més detallada disponible a la <settingsLink>Configuració</settingsLink>."
+		"description": "L'aprovació automàtica permet a W7 realitzar accions sense demanar permís. Activa-la només per a accions en les que confies plenament. Configuració més detallada disponible a la <settingsLink>Configuració</settingsLink>."
 	},
 	"reasoning": {
 		"thinking": "Pensant",
@@ -215,7 +215,7 @@
 		"detailsDiscussLinks": "Obtingues més detalls i participa a <discordLink>Discord</discordLink> i <redditLink>Reddit</redditLink> 🚀"
 	},
 	"browser": {
-		"rooWantsToUse": "Kilo Code vol utilitzar el navegador:",
+		"rooWantsToUse": "W7 vol utilitzar el navegador:",
 		"consoleLogs": "Registres de consola",
 		"noNewLogs": "(Cap registre nou)",
 		"screenshot": "Captura de pantalla del navegador",

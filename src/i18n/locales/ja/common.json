@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Kilo Code",
+		"name": "W7",
 		"description": "コードの計画、構築、修正のためのオープンソース AI コーディング アシスタント。"
 	},
 	"number_format": {
@@ -94,7 +94,7 @@
 		"enter_valid_path": "有効なパスを入力してください"
 	},
 	"input": {
-		"task_prompt": "Kilo Codeにどんなことをさせますか？",
+		"task_prompt": "W7にどんなことをさせますか？",
 		"task_placeholder": "構築、検索、質問する"
 	}
 }

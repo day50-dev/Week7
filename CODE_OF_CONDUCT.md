@@ -1,4 +1,4 @@
-# Kilo Code Community Code of Conduct
+# W7 Community Code of Conduct
 
 ## Our Pledge
 

@@ -50,7 +50,7 @@ export async function useMcpToolTool(
 					cline.recordToolError("use_mcp_tool")
 					await cline.say(
 						"error",
-						`Kilo Code tried to use ${tool_name} with an invalid JSON argument. Retrying...`,
+						`W7 tried to use ${tool_name} with an invalid JSON argument. Retrying...`,
 					)
 
 					pushToolResult(

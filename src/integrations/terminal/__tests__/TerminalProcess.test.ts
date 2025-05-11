@@ -50,7 +50,7 @@ describe("TerminalProcess", () => {
 			shellIntegration: {
 				executeCommand: jest.fn(),
 			},
-			name: "Kilo Code",
+			name: "W7",
 			processId: Promise.resolve(123),
 			creationOptions: {},
 			exitStatus: undefined,

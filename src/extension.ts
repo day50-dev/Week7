@@ -43,7 +43,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	extensionContext = context
 	outputChannel = vscode.window.createOutputChannel("Kilo-Code")
 	context.subscriptions.push(outputChannel)
-	outputChannel.appendLine("Kilo Code extension activated")
+	outputChannel.appendLine("W7 extension activated")
 
 	// Migrate old settings to new
 	await migrateSettings(context, outputChannel)
@@ -72,11 +72,11 @@ export async function activate(context: vscode.ExtensionContext) {
 	)
 
 	if (!context.globalState.get("firstInstallCompleted")) {
-		outputChannel.appendLine("First installation detected, opening Kilo Code sidebar!")
+		outputChannel.appendLine("First installation detected, opening W7 sidebar!")
 		try {
 			await vscode.commands.executeCommand("kilo-code.SidebarProvider.focus")
 
-			outputChannel.appendLine("Opening Kilo Code walkthrough")
+			outputChannel.appendLine("Opening W7 walkthrough")
 			await vscode.commands.executeCommand(
 				"workbench.action.openWalkthrough",
 				"kilocode.kilo-code#kiloCodeWalkthrough",
@@ -129,7 +129,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	registerCodeActions(context)
 	registerTerminalActions(context)
 
-	// Allows other extensions to activate once Kilo Code is ready.
+	// Allows other extensions to activate once W7 is ready.
 	vscode.commands.executeCommand("kilo-code.activationCompleted")
 
 	// Implements the `RooCodeAPI` interface.
@@ -155,7 +155,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
 // This method is called when your extension is deactivated
 export async function deactivate() {
-	outputChannel.appendLine("Kilo Code extension deactivated")
+	outputChannel.appendLine("W7 extension deactivated")
 	// Clean up MCP server manager
 	await McpServerManager.cleanup(extensionContext)
 

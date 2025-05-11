@@ -43,7 +43,7 @@
 
 ### Minor Changes
 
-- Add easier way to add Kilo Code credit when balance is low
+- Add easier way to add W7 credit when balance is low
 
 ### Patch Changes
 
@@ -91,7 +91,7 @@
 ### Patch Changes
 
 - Fix confirmation dialog not closing in settings view
-- Add support for Gemini 2.5 Flash Preview for Kilo Code provider
+- Add support for Gemini 2.5 Flash Preview for W7 provider
 
 ## [4.15.0]
 

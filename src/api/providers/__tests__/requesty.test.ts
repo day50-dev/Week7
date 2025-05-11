@@ -112,7 +112,7 @@ describe("RequestyHandler", () => {
 				apiKey: defaultOptions.requestyApiKey,
 				defaultHeaders: {
 					"HTTP-Referer": "https://kilocode.ai",
-					"X-Title": "Kilo Code",
+					"X-Title": "W7",
 				},
 			})
 		})

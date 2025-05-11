@@ -1,13 +1,13 @@
 {
 	"welcome": {
-		"greeting": "Kilo Code có thể làm gì cho bạn?",
+		"greeting": "W7 có thể làm gì cho bạn?",
 		"introText": "Tôi đã được đào tạo trên các mô hình AI nhanh nhất hiện có và sẵn sàng tạo mã cho bạn với tốc độ cực nhanh!",
-		"ctaButton": "Dùng thử Kilo Code miễn phí",
+		"ctaButton": "Dùng thử W7 miễn phí",
 		"manualModeButton": "Sử dụng khóa API của riêng bạn"
 	},
 	"lowCreditWarning": {
 		"addCredit": "Thêm tín dụng",
-		"lowBalance": "Số dư Kilo Code của bạn thấp"
+		"lowBalance": "Số dư W7 của bạn thấp"
 	},
 	"notifications": {
 		"toolRequest": "Yêu cầu công cụ đang chờ phê duyệt",

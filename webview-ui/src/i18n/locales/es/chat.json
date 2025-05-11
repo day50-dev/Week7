@@ -1,5 +1,5 @@
 {
-	"greeting": "¿Qué puede hacer Kilo Code por ti?",
+	"greeting": "¿Qué puede hacer W7 por ti?",
 	"task": {
 		"title": "Tarea",
 		"seeMore": "Ver más",
@@ -112,7 +112,7 @@
 	"diffError": {
 		"title": "Edición fallida"
 	},
-	"troubleMessage": "Kilo Code está teniendo problemas...",
+	"troubleMessage": "W7 está teniendo problemas...",
 	"apiRequest": {
 		"title": "Solicitud API",
 		"failed": "Solicitud API falló",
@@ -138,47 +138,47 @@
 		"current": "Actual"
 	},
 	"instructions": {
-		"wantsToFetch": "Kilo Code quiere obtener instrucciones detalladas para ayudar con la tarea actual"
+		"wantsToFetch": "W7 quiere obtener instrucciones detalladas para ayudar con la tarea actual"
 	},
 	"fileOperations": {
-		"wantsToRead": "Kilo Code quiere leer este archivo:",
-		"wantsToReadOutsideWorkspace": "Kilo Code quiere leer este archivo fuera del espacio de trabajo:",
-		"didRead": "Kilo Code leyó este archivo:",
-		"wantsToEdit": "Kilo Code quiere editar este archivo:",
-		"wantsToEditOutsideWorkspace": "Kilo Code quiere editar este archivo fuera del espacio de trabajo:",
-		"wantsToCreate": "Kilo Code quiere crear un nuevo archivo:",
-		"wantsToSearchReplace": "Kilo Code quiere realizar búsqueda y reemplazo en este archivo:",
-		"didSearchReplace": "Kilo Code realizó búsqueda y reemplazo en este archivo:",
-		"wantsToInsert": "Kilo Code quiere insertar contenido en este archivo:",
-		"wantsToInsertWithLineNumber": "Kilo Code quiere insertar contenido en este archivo en la línea {{lineNumber}}:",
-		"wantsToInsertAtEnd": "Kilo Code quiere añadir contenido al final de este archivo:"
+		"wantsToRead": "W7 quiere leer este archivo:",
+		"wantsToReadOutsideWorkspace": "W7 quiere leer este archivo fuera del espacio de trabajo:",
+		"didRead": "W7 leyó este archivo:",
+		"wantsToEdit": "W7 quiere editar este archivo:",
+		"wantsToEditOutsideWorkspace": "W7 quiere editar este archivo fuera del espacio de trabajo:",
+		"wantsToCreate": "W7 quiere crear un nuevo archivo:",
+		"wantsToSearchReplace": "W7 quiere realizar búsqueda y reemplazo en este archivo:",
+		"didSearchReplace": "W7 realizó búsqueda y reemplazo en este archivo:",
+		"wantsToInsert": "W7 quiere insertar contenido en este archivo:",
+		"wantsToInsertWithLineNumber": "W7 quiere insertar contenido en este archivo en la línea {{lineNumber}}:",
+		"wantsToInsertAtEnd": "W7 quiere añadir contenido al final de este archivo:"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Kilo Code quiere ver los archivos de nivel superior en este directorio:",
-		"didViewTopLevel": "Kilo Code vio los archivos de nivel superior en este directorio:",
-		"wantsToViewRecursive": "Kilo Code quiere ver recursivamente todos los archivos en este directorio:",
-		"didViewRecursive": "Kilo Code vio recursivamente todos los archivos en este directorio:",
-		"wantsToViewDefinitions": "Kilo Code quiere ver nombres de definiciones de código fuente utilizados en este directorio:",
-		"didViewDefinitions": "Kilo Code vio nombres de definiciones de código fuente utilizados en este directorio:",
-		"wantsToSearch": "Kilo Code quiere buscar en este directorio <code>{{regex}}</code>:",
-		"didSearch": "Kilo Code buscó en este directorio <code>{{regex}}</code>:"
+		"wantsToViewTopLevel": "W7 quiere ver los archivos de nivel superior en este directorio:",
+		"didViewTopLevel": "W7 vio los archivos de nivel superior en este directorio:",
+		"wantsToViewRecursive": "W7 quiere ver recursivamente todos los archivos en este directorio:",
+		"didViewRecursive": "W7 vio recursivamente todos los archivos en este directorio:",
+		"wantsToViewDefinitions": "W7 quiere ver nombres de definiciones de código fuente utilizados en este directorio:",
+		"didViewDefinitions": "W7 vio nombres de definiciones de código fuente utilizados en este directorio:",
+		"wantsToSearch": "W7 quiere buscar en este directorio <code>{{regex}}</code>:",
+		"didSearch": "W7 buscó en este directorio <code>{{regex}}</code>:"
 	},
 	"commandOutput": "Salida del comando",
 	"response": "Respuesta",
 	"arguments": "Argumentos",
 	"mcp": {
-		"wantsToUseTool": "Kilo Code quiere usar una herramienta en el servidor MCP {{serverName}}:",
-		"wantsToAccessResource": "Kilo Code quiere acceder a un recurso en el servidor MCP {{serverName}}:"
+		"wantsToUseTool": "W7 quiere usar una herramienta en el servidor MCP {{serverName}}:",
+		"wantsToAccessResource": "W7 quiere acceder a un recurso en el servidor MCP {{serverName}}:"
 	},
 	"modes": {
-		"wantsToSwitch": "Kilo Code quiere cambiar a modo <code>{{mode}}</code>",
-		"wantsToSwitchWithReason": "Kilo Code quiere cambiar a modo <code>{{mode}}</code> porque: {{reason}}",
-		"didSwitch": "Kilo Code cambió a modo <code>{{mode}}</code>",
-		"didSwitchWithReason": "Kilo Code cambió a modo <code>{{mode}}</code> porque: {{reason}}"
+		"wantsToSwitch": "W7 quiere cambiar a modo <code>{{mode}}</code>",
+		"wantsToSwitchWithReason": "W7 quiere cambiar a modo <code>{{mode}}</code> porque: {{reason}}",
+		"didSwitch": "W7 cambió a modo <code>{{mode}}</code>",
+		"didSwitchWithReason": "W7 cambió a modo <code>{{mode}}</code> porque: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Kilo Code quiere crear una nueva subtarea en modo <code>{{mode}}</code>:",
-		"wantsToFinish": "Kilo Code quiere finalizar esta subtarea",
+		"wantsToCreate": "W7 quiere crear una nueva subtarea en modo <code>{{mode}}</code>:",
+		"wantsToFinish": "W7 quiere finalizar esta subtarea",
 		"newTaskContent": "Instrucciones de la subtarea",
 		"completionContent": "Subtarea completada",
 		"resultContent": "Resultados de la subtarea",
@@ -186,7 +186,7 @@
 		"completionInstructions": "¡Subtarea completada! Puedes revisar los resultados y sugerir correcciones o próximos pasos. Si todo se ve bien, confirma para devolver el resultado a la tarea principal."
 	},
 	"questions": {
-		"hasQuestion": "Kilo Code tiene una pregunta:"
+		"hasQuestion": "W7 tiene una pregunta:"
 	},
 	"taskCompleted": "Tarea completada",
 	"powershell": {
@@ -195,7 +195,7 @@
 	"autoApprove": {
 		"title": "Auto-aprobar:",
 		"none": "Ninguno",
-		"description": "Auto-aprobar permite a Kilo Code realizar acciones sin pedir permiso. Habilita solo para acciones en las que confíes plenamente. Configuración más detallada disponible en <settingsLink>Configuración</settingsLink>."
+		"description": "Auto-aprobar permite a W7 realizar acciones sin pedir permiso. Habilita solo para acciones en las que confíes plenamente. Configuración más detallada disponible en <settingsLink>Configuración</settingsLink>."
 	},
 	"reasoning": {
 		"thinking": "Pensando",
@@ -215,7 +215,7 @@
 		"detailsDiscussLinks": "Obtén más detalles y participa en <discordLink>Discord</discordLink> y <redditLink>Reddit</redditLink> 🚀"
 	},
 	"browser": {
-		"rooWantsToUse": "Kilo Code quiere usar el navegador:",
+		"rooWantsToUse": "W7 quiere usar el navegador:",
 		"consoleLogs": "Registros de la consola",
 		"noNewLogs": "(No hay nuevos registros)",
 		"screenshot": "Captura de pantalla del navegador",

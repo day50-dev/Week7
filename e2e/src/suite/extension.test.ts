@@ -1,7 +1,7 @@
 import * as assert from "assert"
 import * as vscode from "vscode"
 
-suite("Kilo Code Extension", () => {
+suite("W7 Extension", () => {
 	test("Commands should be registered", async () => {
 		const expectedCommands = [
 			"kilo-code.plusButtonClicked",

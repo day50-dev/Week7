@@ -7,7 +7,7 @@
 		"editModesConfig": "Edit modes configuration",
 		"editGlobalModes": "Edit Global Modes",
 		"editProjectModes": "Edit Project Modes (.kilocodemodes)",
-		"createModeHelpText": "Hit the + to create a new custom mode, or just ask Kilo Code in chat to create one for you!"
+		"createModeHelpText": "Hit the + to create a new custom mode, or just ask W7 in chat to create one for you!"
 	},
 	"apiConfiguration": {
 		"title": "API Configuration",
@@ -31,7 +31,7 @@
 	"roleDefinition": {
 		"title": "Role Definition",
 		"resetToDefault": "Reset to default",
-		"description": "Define Kilo Code's expertise and personality for this mode. This description shapes how Kilo Code presents itself and approaches tasks."
+		"description": "Define W7's expertise and personality for this mode. This description shapes how W7 presents itself and approaches tasks."
 	},
 	"customInstructions": {
 		"title": "Mode-specific Custom Instructions (optional)",
@@ -41,7 +41,7 @@
 	},
 	"globalCustomInstructions": {
 		"title": "Custom Instructions for All Modes",
-		"description": "These instructions apply to all modes. They provide a base set of behaviors that can be enhanced by mode-specific instructions below.\nIf you would like Kilo Code to think and speak in a different language than your editor display language ({{language}}), you can specify it here.",
+		"description": "These instructions apply to all modes. They provide a base set of behaviors that can be enhanced by mode-specific instructions below.\nIf you would like W7 to think and speak in a different language than your editor display language ({{language}}), you can specify it here.",
 		"loadFromFile": "Instructions can also be loaded from the <span>.kilocode/rules/</span> folder in your workspace (.kilocoderules is deprecated and will stop working soon)."
 	},
 	"systemPrompt": {
@@ -63,7 +63,7 @@
 		"types": {
 			"ENHANCE": {
 				"label": "Enhance Prompt",
-				"description": "Use prompt enhancement to get tailored suggestions or improvements for your inputs. This ensures Kilo Code understands your intent and provides the best possible responses. Available via the ✨ icon in chat."
+				"description": "Use prompt enhancement to get tailored suggestions or improvements for your inputs. This ensures W7 understands your intent and provides the best possible responses. Available via the ✨ icon in chat."
 			},
 			"EXPLAIN": {
 				"label": "Explain Code",
@@ -128,7 +128,7 @@
 		},
 		"roleDefinition": {
 			"label": "Role Definition",
-			"description": "Define Kilo Code's expertise and personality for this mode."
+			"description": "Define W7's expertise and personality for this mode."
 		},
 		"tools": {
 			"label": "Available Tools",
