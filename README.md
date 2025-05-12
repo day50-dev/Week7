@@ -17,3 +17,4 @@ This is a fork of kilo code.  Here's the goals:
 
 At the same time pulling down from kilo code and fixing the outstanding bugs in their github.
 
+For details on building and developing the extension, see [DEVELOPMENT.md](/DEVELOPMENT.md)
