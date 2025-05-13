@@ -1,0 +1,22 @@
+{
+	"welcome": {
+		"greeting": "Wat kan Kilo Code voor u doen?",
+		"introText": "Ik ben getraind op de snelste beschikbare AI-modellen en sta klaar om code voor u te genereren met warp-snelheid!",
+		"ctaButton": "Probeer Kilo Code gratis",
+		"manualModeButton": "Gebruik uw eigen API-sleutel"
+	},
+	"lowCreditWarning": {
+		"addCredit": "Krediet toevoegen",
+		"lowBalance": "Uw Kilo Code-saldo is laag"
+	},
+	"notifications": {
+		"toolRequest": "Toolverzoek wacht op goedkeuring",
+		"browserAction": "Browseractie wacht op goedkeuring",
+		"command": "Commando wacht op goedkeuring"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "MCP-servers"
+		}
+	}
+}

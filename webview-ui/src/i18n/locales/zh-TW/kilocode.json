@@ -13,5 +13,10 @@
 		"toolRequest": "工具請求等待核准",
 		"browserAction": "瀏覽器動作等待核准",
 		"command": "指令等待核准"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "MCP 伺服器"
+		}
 	}
 }

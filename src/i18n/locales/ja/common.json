@@ -95,6 +95,12 @@
 	},
 	"input": {
 		"task_prompt": "Kilo Codeにどんなことをさせますか？",
-		"task_placeholder": "構築、検索、質問する"
+		"task_placeholder": "タスクをここに入力してください"
+	},
+	"settings": {
+		"providers": {
+			"groqApiKey": "Groq APIキー",
+			"getGroqApiKey": "Groq APIキーを取得"
+		}
 	}
 }

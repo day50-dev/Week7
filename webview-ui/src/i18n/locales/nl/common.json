@@ -1,0 +1,21 @@
+{
+	"number_format": {
+		"thousand_suffix": "k",
+		"million_suffix": "m",
+		"billion_suffix": "mrd"
+	},
+	"feedback": {
+		"title": "Feedback",
+		"description": "We horen graag uw feedback of helpen u graag met eventuele problemen die u ondervindt.",
+		"githubIssues": "Meld een probleem op GitHub",
+		"githubDiscussions": "Neem deel aan GitHub-discussies",
+		"discord": "Word lid van onze Discord-community"
+	},
+	"ui": {
+		"search_placeholder": "Zoeken..."
+	},
+	"mermaid": {
+		"loading": "Mermaid-diagram genereren...",
+		"render_error": "Kan diagram niet weergeven"
+	}
+}

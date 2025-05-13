@@ -24,11 +24,11 @@ import DangerButton from "../common/DangerButton"
 import { useAppTranslation } from "../../i18n/TranslationContext"
 import { Trans } from "react-i18next"
 
-type McpViewProps = {
-	onDone: () => void
-}
+import { Server } from "lucide-react"
+import { SectionHeader } from "../settings/SectionHeader"
+import { Section } from "../settings/Section"
 
-const McpView = ({ onDone }: McpViewProps) => {
+const McpView = () => {
 	const { mcpServers: servers } = useExtensionState()
 	const [activeTab, setActiveTab] = useState("marketplace")
 	const { t } = useAppTranslation()
@@ -45,7 +45,6 @@ const McpView = ({ onDone }: McpViewProps) => {
 	return (
 		<div
 			style={{
-				position: "fixed",
 				top: 0,
 				left: 0,
 				right: 0,
@@ -53,113 +52,124 @@ const McpView = ({ onDone }: McpViewProps) => {
 				display: "flex",
 				flexDirection: "column",
 			}}>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "space-between",
-					alignItems: "center",
-					padding: "10px 17px 5px 20px",
-				}}>
-				<h3 style={{ color: "var(--vscode-foreground)", margin: 0 }}>MCP Servers</h3>
-				<VSCodeButton onClick={onDone}>Done</VSCodeButton>
-			</div>
+			<SectionHeader>
+				<div className="flex items-center gap-2">
+					<Server className="w-4" />
+					<div>{t("kilocode:settings.sections.mcp")}</div>
+				</div>
+			</SectionHeader>
 
-			<div style={{ flex: 1, overflow: "auto" }}>
-				{/* Tabs container */}
-				<div
+			<Section>
+				{/* <div
 					style={{
 						display: "flex",
-						gap: "1px",
-						padding: "0 20px 0 20px",
-						borderBottom: "1px solid var(--vscode-panel-border)",
+						justifyContent: "space-between",
+						alignItems: "center",
+						padding: "10px 17px 5px 20px",
 					}}>
-					<TabButton isActive={activeTab === "marketplace"} onClick={() => handleTabChange("marketplace")}>
-						Marketplace
-					</TabButton>
+					<h3 style={{ color: "var(--vscode-foreground)", margin: 0 }}>MCP Servers</h3>
+					<VSCodeButton onClick={onDone}>Done</VSCodeButton>
+				</div> */}
 
-					<TabButton isActive={activeTab === "installed"} onClick={() => handleTabChange("installed")}>
-						Installed
-					</TabButton>
-				</div>
+				<div style={{ flex: 1, overflow: "auto" }}>
+					{/* Tabs container */}
+					<div
+						style={{
+							display: "flex",
+							gap: "1px",
+							padding: "0 20px 0 20px",
+							borderBottom: "1px solid var(--vscode-panel-border)",
+						}}>
+						<TabButton
+							isActive={activeTab === "marketplace"}
+							onClick={() => handleTabChange("marketplace")}>
+							Marketplace
+						</TabButton>
 
-				{/* Content container */}
-				<div style={{ width: "100%" }}>
-					{activeTab === "marketplace" && <McpMarketplaceView />}
-					{activeTab === "installed" && (
-						<div style={{ padding: "16px 20px" }}>
-							<div
-								style={{
-									color: "var(--vscode-foreground)",
-									fontSize: "13px",
-									marginBottom: "16px",
-									marginTop: "5px",
-								}}>
-								The{" "}
-								<Trans i18nKey="mcp:description">
-									<VSCodeLink
-										href="https://github.com/modelcontextprotocol"
-										style={{ display: "inline" }}>
-										Model Context Protocol
-									</VSCodeLink>
-									<VSCodeLink
-										href="https://github.com/modelcontextprotocol/servers"
-										style={{ display: "inline" }}>
-										community-made servers
-									</VSCodeLink>
-								</Trans>
-							</div>
+						<TabButton isActive={activeTab === "installed"} onClick={() => handleTabChange("installed")}>
+							Installed
+						</TabButton>
+					</div>
 
-							{servers.length > 0 ? (
+					{/* Content container */}
+					<div style={{ width: "100%" }}>
+						{activeTab === "marketplace" && <McpMarketplaceView />}
+						{activeTab === "installed" && (
+							<div style={{ padding: "16px 20px" }}>
 								<div
 									style={{
-										display: "flex",
-										flexDirection: "column",
-										gap: "10px",
+										color: "var(--vscode-foreground)",
+										fontSize: "13px",
+										marginBottom: "16px",
+										marginTop: "5px",
 									}}>
-									{servers.map((server) => (
-										<ServerRow key={server.name} server={server} />
-									))}
+									The{" "}
+									<Trans i18nKey="mcp:description">
+										<VSCodeLink
+											href="https://github.com/modelcontextprotocol"
+											style={{ display: "inline" }}>
+											Model Context Protocol
+										</VSCodeLink>
+										<VSCodeLink
+											href="https://github.com/modelcontextprotocol/servers"
+											style={{ display: "inline" }}>
+											community-made servers
+										</VSCodeLink>
+									</Trans>
 								</div>
-							) : (
-								<div
-									style={{
-										display: "flex",
-										flexDirection: "column",
-										alignItems: "center",
-										gap: "12px",
-										marginTop: 20,
-										marginBottom: 20,
-										color: "var(--vscode-descriptionForeground)",
-									}}>
-									No MCP servers installed
-								</div>
-							)}
 
-							{/* Edit Settings Buttons */}
-							<div style={{ marginTop: "10px", width: "100%", display: "flex", gap: "10px" }}>
-								<VSCodeButton
-									appearance="secondary"
-									style={{ flex: 1 }}
-									onClick={() => {
-										vscode.postMessage({ type: "openMcpSettings" })
-									}}>
-									<span className="codicon codicon-edit" style={{ marginRight: "6px" }}></span>
-									{t("mcp:editGlobalMCP")}
-								</VSCodeButton>
-								<VSCodeButton
-									appearance="secondary"
-									style={{ flex: 1 }}
-									onClick={() => {
-										vscode.postMessage({ type: "openProjectMcpSettings" })
-									}}>
-									<span className="codicon codicon-edit" style={{ marginRight: "6px" }}></span>
-									{t("mcp:editProjectMCP")}
-								</VSCodeButton>
+								{servers.length > 0 ? (
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											gap: "10px",
+										}}>
+										{servers.map((server) => (
+											<ServerRow key={server.name} server={server} />
+										))}
+									</div>
+								) : (
+									<div
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+											gap: "12px",
+											marginTop: 20,
+											marginBottom: 20,
+											color: "var(--vscode-descriptionForeground)",
+										}}>
+										No MCP servers installed
+									</div>
+								)}
+
+								{/* Edit Settings Buttons */}
+								<div style={{ marginTop: "10px", width: "100%", display: "flex", gap: "10px" }}>
+									<VSCodeButton
+										appearance="secondary"
+										style={{ flex: 1 }}
+										onClick={() => {
+											vscode.postMessage({ type: "openMcpSettings" })
+										}}>
+										<span className="codicon codicon-edit" style={{ marginRight: "6px" }}></span>
+										{t("mcp:editGlobalMCP")}
+									</VSCodeButton>
+									<VSCodeButton
+										appearance="secondary"
+										style={{ flex: 1 }}
+										onClick={() => {
+											vscode.postMessage({ type: "openProjectMcpSettings" })
+										}}>
+										<span className="codicon codicon-edit" style={{ marginRight: "6px" }}></span>
+										{t("mcp:editProjectMCP")}
+									</VSCodeButton>
+								</div>
 							</div>
-						</div>
-					)}
+						)}
+					</div>
 				</div>
-			</div>
+			</Section>
 		</div>
 	)
 }

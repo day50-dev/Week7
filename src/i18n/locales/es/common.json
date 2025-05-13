@@ -95,6 +95,12 @@
 	},
 	"input": {
 		"task_prompt": "¿Qué debe hacer Kilo Code?",
-		"task_placeholder": "Construir, buscar, preguntar algo"
+		"task_placeholder": "Escribe tu tarea aquí"
+	},
+	"settings": {
+		"providers": {
+			"groqApiKey": "Clave API de Groq",
+			"getGroqApiKey": "Obtener clave API de Groq"
+		}
 	}
 }

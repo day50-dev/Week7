@@ -13,5 +13,10 @@
 		"toolRequest": "Solicitud de herramienta pendiente de aprobación",
 		"browserAction": "Acción del navegador pendiente de aprobación",
 		"command": "Comando pendiente de aprobación"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "Servidores MCP"
+		}
 	}
 }

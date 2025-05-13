@@ -5,7 +5,6 @@ suite("Kilo Code Extension", () => {
 	test("Commands should be registered", async () => {
 		const expectedCommands = [
 			"kilo-code.plusButtonClicked",
-			"kilo-code.mcpButtonClicked",
 			"kilo-code.historyButtonClicked",
 			"kilo-code.popoutButtonClicked",
 			"kilo-code.settingsButtonClicked",

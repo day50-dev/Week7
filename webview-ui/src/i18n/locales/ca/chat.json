@@ -73,7 +73,7 @@
 	},
 	"scrollToBottom": "Desplaça't al final del xat",
 	"about": "Genera, refactoritza i depura codi amb l'ajuda de la IA.<br />Consulta la nostra <DocsLink>documentació</DocsLink> per obtenir més informació.",
-	"onboarding": "<strong> La vostra llista de tasques en aquest espai de treball està buida. </strong> Comença escrivint una tasca a continuació. \nNo esteu segur per on començar? \nMés informació sobre què pot fer Roo als documents.",
+	"onboarding": "<strong> La vostra llista de tasques en aquest espai de treball està buida. </strong> Comença escrivint una tasca a continuació. \nNo esteu segur per on començar? \nMés informació sobre què pot fer Kilo Code als documents.",
 	"rooTips": {
 		"boomerangTasks": {
 			"title": "Tasques Boomerang",
@@ -205,12 +205,12 @@
 		"copyToInput": "Copiar a l'entrada (o Shift + clic)"
 	},
 	"announcement": {
-		"title": "🎉 Roo Code 3.15 publicat",
-		"description": "Roo Code 3.15 porta noves funcionalitats i millores basades en els teus comentaris.",
+		"title": "🎉 Roo Code 3.16 publicat",
+		"description": "Roo Code 3.16 porta noves funcionalitats i millores basades en els teus comentaris.",
 		"whatsNew": "Novetats",
-		"feature1": "<bold>Memòria cau de prompts per a Vertex</bold>: S'ha afegit suport de memòria cau de prompts per a Vertex AI, millorant els temps de resposta i reduint els costos d'API",
-		"feature2": "<bold>Mecanisme alternatiu per a Terminal</bold>: S'ha implementat un mecanisme alternatiu quan la integració de shell del terminal VSCode falla",
-		"feature3": "<bold>Fragments de codi millorats</bold>: S'ha millorat la renderització i interacció amb fragments de codi a la interfície de xat",
+		"feature1": "<bold>Proveïdors d'API Groq i Chutes</bold>: S'ha afegit suport per als proveïdors d'API Groq i Chutes (gràcies @shariqriazz!)",
+		"feature2": "<bold>Referències de codi clicables</bold>: Les referències de codi a les respostes del model ara naveguen directament a les línies de codi font (gràcies @KJ7LNW!)",
+		"feature3": "<bold>Millores d'estabilitat MCP</bold>: S'han corregit diversos errors per millorar l'estabilitat de les integracions MCP",
 		"hideButton": "Amagar anunci",
 		"detailsDiscussLinks": "Obtingues més detalls i participa a <discordLink>Discord</discordLink> i <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -234,6 +234,15 @@
 			"scrollDown": "Desplaçar avall",
 			"scrollUp": "Desplaçar amunt",
 			"close": "Tancar navegador"
+		}
+	},
+	"codeblock": {
+		"tooltips": {
+			"expand": "Expandir bloc de codi",
+			"collapse": "Contraure bloc de codi",
+			"enable_wrap": "Activar ajustament de línia",
+			"disable_wrap": "Desactivar ajustament de línia",
+			"copy_code": "Copiar codi"
 		}
 	},
 	"systemPromptWarning": "ADVERTÈNCIA: S'ha activat una substitució personalitzada d'instruccions del sistema. Això pot trencar greument la funcionalitat i causar un comportament impredictible.",

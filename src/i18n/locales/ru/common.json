@@ -90,11 +90,17 @@
 	"storage": {
 		"prompt_custom_path": "Введите пользовательский путь хранения истории разговоров, оставьте пустым для использования расположения по умолчанию",
 		"path_placeholder": "D:\\KiloCodeStorage",
-		"enter_absolute_path": "Пожалуйста, введите абсолютный путь (например, D:\\RooCodeStorage или /home/user/storage)",
+		"enter_absolute_path": "Пожалуйста, введите абсолютный путь (например, D:\\KiloCodeStorage или /home/user/storage)",
 		"enter_valid_path": "Пожалуйста, введите корректный путь"
 	},
 	"input": {
 		"task_prompt": "Что должен сделать Kilo Code?",
 		"task_placeholder": "Введите вашу задачу здесь"
+	},
+	"settings": {
+		"providers": {
+			"groqApiKey": "Ключ API Groq",
+			"getGroqApiKey": "Получить ключ API Groq"
+		}
 	}
 }

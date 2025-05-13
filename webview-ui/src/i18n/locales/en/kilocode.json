@@ -13,5 +13,10 @@
 		"toolRequest": "Tool request waiting for approval",
 		"browserAction": "Browser action waiting for approval",
 		"command": "Command waiting for approval"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "MCP Servers"
+		}
 	}
 }

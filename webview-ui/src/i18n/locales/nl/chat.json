@@ -1,0 +1,254 @@
+{
+	"greeting": "Wat kan Kilo Code voor u doen?",
+	"task": {
+		"title": "Taak",
+		"seeMore": "Meer zien",
+		"seeLess": "Minder zien",
+		"tokens": "Tokens:",
+		"cache": "Cache:",
+		"apiCost": "API Kosten:",
+		"contextWindow": "Context Lengte:",
+		"closeAndStart": "Taak sluiten en een nieuwe starten",
+		"export": "Taakgeschiedenis exporteren",
+		"delete": "Taak Verwijderen (Shift + Klik om bevestiging over te slaan)"
+	},
+	"history": {
+		"title": "Geschiedenis"
+	},
+	"unpin": "Losmaken",
+	"pin": "Vastmaken",
+	"retry": {
+		"title": "Opnieuw proberen",
+		"tooltip": "Probeer de bewerking opnieuw"
+	},
+	"startNewTask": {
+		"title": "Nieuwe Taak Starten",
+		"tooltip": "Begin een nieuwe taak"
+	},
+	"proceedAnyways": {
+		"title": "Toch Doorgaan",
+		"tooltip": "Doorgaan terwijl commando wordt uitgevoerd"
+	},
+	"save": {
+		"title": "Opslaan",
+		"tooltip": "Sla de bestandswijzigingen op"
+	},
+	"tokenProgress": {
+		"availableSpace": "Beschikbare ruimte: {{amount}} tokens",
+		"tokensUsed": "Gebruikte tokens: {{used}} van {{total}}",
+		"reservedForResponse": "Gereserveerd voor modelantwoord: {{amount}} tokens"
+	},
+	"reject": {
+		"title": "Afwijzen",
+		"tooltip": "Wijs deze actie af"
+	},
+	"completeSubtaskAndReturn": "Subtaak Voltooien en Terugkeren",
+	"approve": {
+		"title": "Goedkeuren",
+		"tooltip": "Keur deze actie goed"
+	},
+	"runCommand": {
+		"title": "Commando Uitvoeren",
+		"tooltip": "Voer dit commando uit"
+	},
+	"proceedWhileRunning": {
+		"title": "Doorgaan Tijdens Uitvoering",
+		"tooltip": "Doorgaan ondanks waarschuwingen"
+	},
+	"killCommand": {
+		"title": "Commando Stoppen",
+		"tooltip": "Stop het huidige commando"
+	},
+	"resumeTask": {
+		"title": "Taak Hervatten",
+		"tooltip": "Ga door met de huidige taak"
+	},
+	"terminate": {
+		"title": "Beëindigen",
+		"tooltip": "Beëindig de huidige taak"
+	},
+	"cancel": {
+		"title": "Annuleren",
+		"tooltip": "Annuleer de huidige bewerking"
+	},
+	"scrollToBottom": "Scroll naar onderkant van chat",
+	"about": "Genereer, refactor en debug code met AI-assistentie.<br />Bekijk onze <DocsLink>documentatie</DocsLink> voor meer informatie.",
+	"onboarding": "Uw takenlijst in deze werkruimte is leeg.",
+	"rooTips": {
+		"boomerangTasks": {
+			"title": "Boomerang Taken",
+			"description": "Splits taken op in kleinere, beheersbare delen"
+		},
+		"stickyModels": {
+			"title": "Plakkende Modellen",
+			"description": "Elke modus onthoudt uw laatst gebruikte model"
+		},
+		"tools": {
+			"title": "Gereedschappen",
+			"description": "Sta de AI toe problemen op te lossen door op het web te browsen, commando's uit te voeren en meer"
+		},
+		"customizableModes": {
+			"title": "Aanpasbare Modi",
+			"description": "Gespecialiseerde persona's met hun eigen gedrag en toegewezen modellen"
+		}
+	},
+	"selectMode": "Selecteer modus voor interactie",
+	"selectApiConfig": "Selecteer API-configuratie",
+	"enhancePrompt": "Verbeter prompt met extra context",
+	"enhancePromptDescription": "De knop 'Verbeter Prompt' helpt uw prompt te verbeteren door extra context, verduidelijking of herformulering te bieden. Probeer hier een prompt in te typen en klik nogmaals op de knop om te zien hoe het werkt.",
+	"addImages": "Afbeeldingen toevoegen aan bericht",
+	"sendMessage": "Bericht verzenden",
+	"typeMessage": "Typ een bericht...",
+	"typeTask": "Bouw, vind, vraag iets",
+	"addContext": "@ om context toe te voegen, / om van modus te wisselen",
+	"dragFiles": "houd shift ingedrukt om bestanden te slepen",
+	"dragFilesImages": "houd shift ingedrukt om bestanden/afbeeldingen te slepen",
+	"errorReadingFile": "Fout bij lezen bestand:",
+	"noValidImages": "Geen geldige afbeeldingen verwerkt",
+	"separator": "Scheidingsteken",
+	"edit": "Bewerken...",
+	"forNextMode": "voor volgende modus",
+	"apiRequest": {
+		"title": "API Verzoek",
+		"failed": "API Verzoek Mislukt",
+		"streaming": "API Verzoek...",
+		"cancelled": "API Verzoek Geannuleerd",
+		"streamingFailed": "API Streaming Mislukt"
+	},
+	"checkpoint": {
+		"initial": "Initieel Controlepunt",
+		"regular": "Controlepunt",
+		"initializingWarning": "Controlepunt wordt nog geïnitialiseerd... Als dit te lang duurt, kunt u controlepunten uitschakelen in <settingsLink>instellingen</settingsLink> en uw taak opnieuw starten.",
+		"menu": {
+			"viewDiff": "Verschil Bekijken",
+			"restore": "Controlepunt Herstellen",
+			"restoreFiles": "Bestanden Herstellen",
+			"restoreFilesDescription": "Herstelt de bestanden van uw project naar een momentopname die op dit punt is gemaakt.",
+			"restoreFilesAndTask": "Bestanden & Taak Herstellen",
+			"confirm": "Bevestigen",
+			"cancel": "Annuleren",
+			"cannotUndo": "Deze actie kan niet ongedaan worden gemaakt.",
+			"restoreFilesAndTaskDescription": "Herstelt de bestanden van uw project naar een momentopname die op dit punt is gemaakt en verwijdert alle berichten na dit punt."
+		},
+		"current": "Huidig"
+	},
+	"instructions": {
+		"wantsToFetch": "Kilo Code wil gedetailleerde instructies ophalen om te helpen bij de huidige taak"
+	},
+	"fileOperations": {
+		"wantsToRead": "Kilo Code wil dit bestand lezen:",
+		"wantsToReadOutsideWorkspace": "Kilo Code wil dit bestand buiten de werkruimte lezen:",
+		"didRead": "Kilo Code heeft dit bestand gelezen:",
+		"wantsToEdit": "Kilo Code wil dit bestand bewerken:",
+		"wantsToEditOutsideWorkspace": "Kilo Code wil dit bestand buiten de werkruimte bewerken:",
+		"wantsToCreate": "Kilo Code wil een nieuw bestand aanmaken:",
+		"wantsToSearchReplace": "Kilo Code wil zoeken en vervangen in dit bestand:",
+		"didSearchReplace": "Kilo Code heeft zoeken en vervangen uitgevoerd op dit bestand:",
+		"wantsToInsert": "Kilo Code wil inhoud invoegen in dit bestand:",
+		"wantsToInsertWithLineNumber": "Kilo Code wil inhoud invoegen in dit bestand op regel {{lineNumber}}:",
+		"wantsToInsertAtEnd": "Kilo Code wil inhoud toevoegen aan het einde van dit bestand:"
+	},
+	"directoryOperations": {
+		"wantsToViewTopLevel": "Kilo Code wil de bestanden op het hoogste niveau in deze map bekijken:",
+		"didViewTopLevel": "Kilo Code heeft de bestanden op het hoogste niveau in deze map bekeken:",
+		"wantsToViewRecursive": "Kilo Code wil recursief alle bestanden in deze map bekijken:",
+		"didViewRecursive": "Kilo Code heeft recursief alle bestanden in deze map bekeken:",
+		"wantsToViewDefinitions": "Kilo Code wil broncode definitienamen bekijken die in deze map worden gebruikt:",
+		"didViewDefinitions": "Kilo Code heeft broncode definitienamen bekeken die in deze map worden gebruikt:",
+		"wantsToSearch": "Kilo Code wil deze map doorzoeken op <code>{{regex}}</code>:",
+		"didSearch": "Kilo Code heeft deze map doorzocht op <code>{{regex}}</code>:"
+	},
+	"commandOutput": "Commando Uitvoer",
+	"response": "Antwoord",
+	"arguments": "Argumenten",
+	"mcp": {
+		"wantsToUseTool": "Kilo Code wil een tool gebruiken op de {{serverName}} MCP server:",
+		"wantsToAccessResource": "Kilo Code wil toegang krijgen tot een bron op de {{serverName}} MCP server:"
+	},
+	"modes": {
+		"wantsToSwitch": "Kilo Code wil overschakelen naar de {{mode}} modus",
+		"wantsToSwitchWithReason": "Kilo Code wil overschakelen naar de {{mode}} modus omdat: {{reason}}",
+		"didSwitch": "Kilo Code is overgeschakeld naar de {{mode}} modus",
+		"didSwitchWithReason": "Kilo Code is overgeschakeld naar de {{mode}} modus omdat: {{reason}}"
+	},
+	"subtasks": {
+		"wantsToCreate": "Kilo Code wil een nieuwe subtaak aanmaken in de {{mode}} modus:",
+		"wantsToFinish": "Kilo Code wil deze subtaak voltooien",
+		"newTaskContent": "Subtaak Instructies",
+		"completionContent": "Subtaak Voltooid",
+		"resultContent": "Subtaak Resultaten",
+		"defaultResult": "Ga alstublieft verder met de volgende taak.",
+		"completionInstructions": "Subtaak voltooid! U kunt de resultaten bekijken en eventuele correcties of volgende stappen voorstellen. Als alles er goed uitziet, bevestig dan om het resultaat terug te sturen naar de hoofdtaak."
+	},
+	"questions": {
+		"hasQuestion": "Kilo Code heeft een vraag:"
+	},
+	"taskCompleted": "Taak Voltooid",
+	"error": "Fout",
+	"diffError": {
+		"title": "Bewerking Mislukt"
+	},
+	"troubleMessage": "Kilo Code ondervindt problemen...",
+	"powershell": {
+		"issues": "Het lijkt erop dat u problemen heeft met Windows PowerShell, zie alstublieft dit"
+	},
+	"autoApprove": {
+		"title": "Automatisch goedkeuren:",
+		"none": "Geen",
+		"description": "Automatisch goedkeuren stelt Kilo Code in staat acties uit te voeren zonder toestemming te vragen. Schakel dit alleen in voor acties die u volledig vertrouwt. Meer gedetailleerde configuratie beschikbaar in <settingsLink>Instellingen</settingsLink>."
+	},
+	"announcement": {
+		"title": "🎉 Roo Code 3.16 Uitgebracht",
+		"description": "Roo Code 3.16 brengt nieuwe functies en verbeteringen op basis van uw feedback.",
+		"whatsNew": "Wat is Nieuw",
+		"feature1": "<bold>Groq en Chutes API Providers</bold>: Ondersteuning toegevoegd voor Groq en Chutes API providers (dankzij @shariqriazz!)",
+		"feature2": "<bold>Klikbare Code Referenties</bold>: Code referenties in modelantwoorden navigeren nu naar bronregels (dankzij @KJ7LNW!)",
+		"feature3": "<bold>MCP Stabiliteitsverbeteringen</bold>: Verschillende bugs opgelost om de stabiliteit van MCP-integraties te verbeteren",
+		"hideButton": "Aankondiging verbergen",
+		"detailsDiscussLinks": "Krijg meer details en discussieer in <discordLink>Discord</discordLink> en <redditLink>Reddit</redditLink> 🚀"
+	},
+	"reasoning": {
+		"thinking": "Denken",
+		"seconds": "{{count}}s"
+	},
+	"followUpSuggest": {
+		"copyToInput": "Kopieer naar invoer (zelfde als shift + klik)"
+	},
+	"browser": {
+		"rooWantsToUse": "Kilo Code wil de browser gebruiken:",
+		"consoleLogs": "Console Logs",
+		"noNewLogs": "(Geen nieuwe logs)",
+		"screenshot": "Browser screenshot",
+		"cursor": "cursor",
+		"navigation": {
+			"step": "Stap {{current}} van {{total}}",
+			"previous": "Vorige",
+			"next": "Volgende"
+		},
+		"sessionStarted": "Browsersessie Gestart",
+		"actions": {
+			"title": "Browse Actie: ",
+			"launch": "Start browser op {{url}}",
+			"click": "Klik ({{coordinate}})",
+			"type": "Typ \"{{text}}\"",
+			"scrollDown": "Scroll omlaag",
+			"scrollUp": "Scroll omhoog",
+			"close": "Sluit browser"
+		}
+	},
+	"codeblock": {
+		"tooltips": {
+			"expand": "Codeblok uitvouwen",
+			"collapse": "Codeblok invouwen",
+			"enable_wrap": "Woordafbreking inschakelen",
+			"disable_wrap": "Woordafbreking uitschakelen",
+			"copy_code": "Code kopiëren"
+		}
+	},
+	"systemPromptWarning": "WAARSCHUWING: Aangepaste systeemprompt-override actief. Dit kan de functionaliteit ernstig verstoren en onvoorspelbaar gedrag veroorzaken.",
+	"shellIntegration": {
+		"title": "Waarschuwing Commando Uitvoering",
+		"description": "Uw commando wordt uitgevoerd zonder VSCode terminal shell-integratie. Om deze waarschuwing te onderdrukken, kunt u shell-integratie uitschakelen in de sectie <strong>Terminal</strong> van de <settingsLink>Kilo Code-instellingen</settingsLink> of problemen met VSCode terminal-integratie oplossen via de onderstaande link.",
+		"troubleshooting": "Klik hier voor documentatie over shell-integratie."
+	}
+}

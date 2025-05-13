@@ -13,5 +13,10 @@
 		"toolRequest": "Sol·licitud d'eina pendent d'aprovació",
 		"browserAction": "Acció del navegador pendent d'aprovació",
 		"command": "Ordre pendent d'aprovació"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "Servidors MCP"
+		}
 	}
 }

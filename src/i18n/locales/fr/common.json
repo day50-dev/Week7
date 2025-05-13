@@ -94,7 +94,13 @@
 		"enter_valid_path": "Veuillez entrer un chemin valide"
 	},
 	"input": {
-		"task_prompt": "Que doit faire Kilo Code ?",
-		"task_placeholder": "Construire, trouver, demander quelque chose"
+		"task_prompt": "Que doit faire Kilo Code?",
+		"task_placeholder": "Écris ta tâche ici"
+	},
+	"settings": {
+		"providers": {
+			"groqApiKey": "Clé API Groq",
+			"getGroqApiKey": "Obtenir la clé API Groq"
+		}
 	}
 }

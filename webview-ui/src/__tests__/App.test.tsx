@@ -44,16 +44,6 @@ jest.mock("@src/components/history/HistoryView", () => ({
 		)
 	},
 }))
-jest.mock("@src/components/kilocodeMcp/McpView", () => ({
-	__esModule: true,
-	default: function McpView({ onDone }: { onDone: () => void }) {
-		return (
-			<div data-testid="mcp-view" onClick={onDone}>
-				MCP View
-			</div>
-		)
-	},
-}))
 
 jest.mock("../components/kilocodeMcp/marketplace/McpMarketplaceView", () => ({
 	__esModule: true,
@@ -139,20 +129,6 @@ describe("App", () => {
 		expect(chatView.getAttribute("data-hidden")).toBe("true")
 	})
 
-	it("switches to MCP view when receiving mcpButtonClicked action", async () => {
-		render(<AppWithProviders />)
-
-		act(() => {
-			triggerMessage("mcpButtonClicked")
-		})
-
-		const mcpView = await screen.findByTestId("mcp-view")
-		expect(mcpView).toBeInTheDocument()
-
-		const chatView = screen.getByTestId("chat-view")
-		expect(chatView.getAttribute("data-hidden")).toBe("true")
-	})
-
 	it("switches to prompts view when receiving promptsButtonClicked action", async () => {
 		render(<AppWithProviders />)
 
@@ -185,7 +161,7 @@ describe("App", () => {
 		expect(screen.queryByTestId("settings-view")).not.toBeInTheDocument()
 	})
 
-	it.each(["history", "prompts", "mcp"])("returns to chat view when clicking done in %s view", async (view) => {
+	it.each(["history", "prompts"])("returns to chat view when clicking done in %s view", async (view) => {
 		render(<AppWithProviders />)
 
 		act(() => {

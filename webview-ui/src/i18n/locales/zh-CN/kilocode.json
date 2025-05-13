@@ -13,5 +13,10 @@
 		"toolRequest": "工具请求等待批准",
 		"browserAction": "浏览器操作等待批准",
 		"command": "命令等待批准"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "MCP 服务器"
+		}
 	}
 }

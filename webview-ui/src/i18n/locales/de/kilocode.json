@@ -13,5 +13,10 @@
 		"toolRequest": "Werkzeuganfrage wartet auf Genehmigung",
 		"browserAction": "Browseraktion wartet auf Genehmigung",
 		"command": "Befehl wartet auf Genehmigung"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "MCP-Server"
+		}
 	}
 }

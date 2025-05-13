@@ -95,6 +95,12 @@
 	},
 	"input": {
 		"task_prompt": "Kilo Code ne yapsın?",
-		"task_placeholder": "Oluştur, bul, bir şey sor"
+		"task_placeholder": "Görevini buraya yaz"
+	},
+	"settings": {
+		"providers": {
+			"groqApiKey": "Groq API Anahtarı",
+			"getGroqApiKey": "Groq API Anahtarı Al"
+		}
 	}
 }

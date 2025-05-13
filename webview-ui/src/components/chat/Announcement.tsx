@@ -15,11 +15,11 @@ const Announcement = ({ hideAnnouncement }: AnnouncementProps) => {
 
 	const discordLink = (
 		<VSCodeLink
-			href="https://discord.gg/roocode"
+			href="https://discord.gg/Ja6BkfyTzJ"
 			onClick={(e) => {
 				e.preventDefault()
 				window.postMessage(
-					{ type: "action", action: "openExternal", data: { url: "https://discord.gg/roocode" } },
+					{ type: "action", action: "openExternal", data: { url: "https://discord.gg/Ja6BkfyTzJ" } },
 					"*",
 				)
 			}}>

@@ -1,4 +1,14 @@
-import { forwardRef, memo, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react"
+import React, {
+	forwardRef,
+	memo,
+	useCallback,
+	useEffect,
+	useImperativeHandle,
+	useLayoutEffect,
+	useMemo,
+	useRef,
+	useState,
+} from "react"
 import { useAppTranslation } from "@/i18n/TranslationContext"
 import {
 	CheckCheck,
@@ -15,7 +25,7 @@ import {
 	Server,
 	LucideIcon,
 } from "lucide-react"
-import { CaretSortIcon } from "@radix-ui/react-icons"
+
 // kilocode_change
 import { ensureBodyPointerEventsRestored } from "@/utils/fixPointerEvents"
 
@@ -34,13 +44,13 @@ import {
 	AlertDialogHeader,
 	AlertDialogFooter,
 	Button,
-	DropdownMenu,
-	DropdownMenuTrigger,
-	DropdownMenuContent,
-	DropdownMenuItem,
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
 } from "@/components/ui"
 
-import { Tab, TabContent, TabHeader } from "../common/Tab"
+import { Tab, TabContent, TabHeader, TabList, TabTrigger } from "../common/Tab"
 import { SetCachedStateField, SetExperimentEnabled } from "./types"
 import { SectionHeader } from "./SectionHeader"
 import ApiConfigManager from "./ApiConfigManager"
@@ -55,6 +65,15 @@ import { ExperimentalSettings } from "./ExperimentalSettings"
 import { LanguageSettings } from "./LanguageSettings"
 import { About } from "./About"
 import { Section } from "./Section"
+import { cn } from "@/lib/utils"
+import McpView from "../kilocodeMcp/McpView" // kilocode_change
+
+export const settingsTabsContainer = "flex flex-1 overflow-hidden [&.narrow_.tab-label]:hidden"
+export const settingsTabList =
+	"w-48 data-[compact=true]:w-12 flex-shrink-0 flex flex-col overflow-y-auto overflow-x-hidden border-r border-vscode-sideBar-background"
+export const settingsTabTrigger =
+	"whitespace-nowrap overflow-hidden min-w-0 h-12 px-4 py-3 box-border flex items-center border-l-2 border-transparent text-vscode-foreground opacity-70 hover:bg-vscode-list-hoverBackground data-[compact=true]:w-12 data-[compact=true]:p-4"
+export const settingsTabTriggerActive = "opacity-100 border-vscode-focusBorder bg-vscode-list-activeSelectionBackground"
 
 export interface SettingsViewRef {
 	checkUnsaveChanges: (then: () => void) => void
@@ -78,19 +97,23 @@ type SectionName = (typeof sectionNames)[number]
 
 type SettingsViewProps = {
 	onDone: () => void
-	onOpenMcp: () => void
 	targetSection?: string
 }
 
-const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, onOpenMcp, targetSection }, ref) => {
+const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, targetSection }, ref) => {
 	const { t } = useAppTranslation()
 
 	const extensionState = useExtensionState()
-	const { currentApiConfigName, listApiConfigMeta, uriScheme, settingsImportedAt } = extensionState
+	const { currentApiConfigName, listApiConfigMeta, uriScheme, version, settingsImportedAt } = extensionState
 
 	const [isDiscardDialogShow, setDiscardDialogShow] = useState(false)
 	const [isChangeDetected, setChangeDetected] = useState(false)
 	const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined)
+	const [activeTab, setActiveTab] = useState<SectionName>(
+		targetSection && sectionNames.includes(targetSection as SectionName)
+			? (targetSection as SectionName)
+			: "providers",
+	)
 
 	const prevApiConfigName = useRef(currentApiConfigName)
 	const confirmDialogHandler = useRef<() => void>()
@@ -139,7 +162,7 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, o
 		soundVolume,
 		terminalOutputLineLimit,
 		terminalShellIntegrationTimeout,
-		terminalShellIntegrationDisabled,
+		terminalShellIntegrationDisabled, // Added from upstream
 		terminalCommandDelay,
 		terminalPowershellCounter,
 		terminalZshClearEolMark,
@@ -154,7 +177,6 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, o
 		terminalCompressProgressBar,
 	} = cachedState
 
-	// Make sure apiConfiguration is initialized and managed by SettingsView.
 	const apiConfiguration = useMemo(() => cachedState.apiConfiguration ?? {}, [cachedState.apiConfiguration])
 
 	useEffect(() => {
@@ -172,16 +194,22 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, o
 	// kilocode_change start
 	// Temporary way of making sure that the Settings view updates its local state properly when receiving
 	// api keys from providers that support url callbacks. This whole Settings View needs proper with this local state thing later
+	const { kilocodeToken, openRouterApiKey, glamaApiKey, requestyApiKey } = extensionState.apiConfiguration ?? {}
 	useEffect(() => {
-		setCachedState((prevCachedState) => ({ ...prevCachedState, ...extensionState }))
-		setChangeDetected(false)
+		setCachedState((prevCachedState) => ({
+			...prevCachedState,
+			apiConfiguration: {
+				...prevCachedState.apiConfiguration,
+				// Only set specific tokens/keys instead of spreading the entire
+				// `prevCachedState.apiConfiguration` since it may contain unsaved changes
+				kilocodeToken,
+				openRouterApiKey,
+				glamaApiKey,
+				requestyApiKey,
+			},
+		}))
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [
-		extensionState.apiConfiguration?.kilocodeToken,
-		extensionState.apiConfiguration?.openRouterApiKey,
-		extensionState.apiConfiguration?.glamaApiKey,
-		extensionState.apiConfiguration?.requestyApiKey,
-	])
+	}, [kilocodeToken, openRouterApiKey, glamaApiKey, requestyApiKey])
 
 	useEffect(() => {
 		// Only update if we're not already detecting changes
@@ -313,91 +341,115 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, o
 	const onConfirmDialogResult = useCallback(
 		(confirm: boolean) => {
 			if (confirm) {
-				setCachedState(extensionState)
-				setChangeDetected(false)
-				setTimeout(() => confirmDialogHandler.current?.(), 0)
+				// Discard changes: Reset state and flag
+				setCachedState(extensionState) // Revert to original state
+				setChangeDetected(false) // Reset change flag
+				confirmDialogHandler.current?.() // Execute the pending action (e.g., tab switch)
 			}
+			// If confirm is false (Cancel), do nothing, dialog closes automatically
 		},
-		[setCachedState, setChangeDetected, extensionState],
+		[setCachedState, setChangeDetected, extensionState], // Depend on extensionState to get the latest original state
 	)
 	// kilocode_change end
 
-	const providersRef = useRef<HTMLDivElement>(null)
-	const autoApproveRef = useRef<HTMLDivElement>(null)
-	const browserRef = useRef<HTMLDivElement>(null)
-	const checkpointsRef = useRef<HTMLDivElement>(null)
-	const notificationsRef = useRef<HTMLDivElement>(null)
-	const contextManagementRef = useRef<HTMLDivElement>(null)
-	const terminalRef = useRef<HTMLDivElement>(null)
-	const experimentalRef = useRef<HTMLDivElement>(null)
-	const languageRef = useRef<HTMLDivElement>(null)
-	const aboutRef = useRef<HTMLDivElement>(null)
-	const mcpRef = useRef<HTMLDivElement>(null)
-
-	const sections: { id: SectionName; icon: LucideIcon; ref: React.RefObject<HTMLDivElement> }[] = useMemo(
-		() => [
-			{ id: "providers", icon: Webhook, ref: providersRef },
-			{ id: "autoApprove", icon: CheckCheck, ref: autoApproveRef },
-			{ id: "browser", icon: SquareMousePointer, ref: browserRef },
-			{ id: "checkpoints", icon: GitBranch, ref: checkpointsRef },
-			{ id: "notifications", icon: Bell, ref: notificationsRef },
-			{ id: "contextManagement", icon: Database, ref: contextManagementRef },
-			{ id: "terminal", icon: SquareTerminal, ref: terminalRef },
-			{ id: "experimental", icon: FlaskConical, ref: experimentalRef },
-			{ id: "language", icon: Globe, ref: languageRef },
-			{ id: "mcp", icon: Server, ref: mcpRef },
-			{ id: "about", icon: Info, ref: aboutRef },
-		],
-		[
-			providersRef,
-			autoApproveRef,
-			browserRef,
-			checkpointsRef,
-			notificationsRef,
-			contextManagementRef,
-			terminalRef,
-			experimentalRef,
-		],
+	// Handle tab changes with unsaved changes check
+	const handleTabChange = useCallback(
+		(newTab: SectionName) => {
+			// Directly switch tab without checking for unsaved changes
+			setActiveTab(newTab)
+		},
+		[], // No dependency on isChangeDetected needed anymore
 	)
 
-	const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => ref.current?.scrollIntoView()
+	// Store direct DOM element refs for each tab
+	const tabRefs = useRef<Record<SectionName, HTMLButtonElement | null>>(
+		Object.fromEntries(sectionNames.map((name) => [name, null])) as Record<SectionName, HTMLButtonElement | null>,
+	)
 
-	// Scroll to target section when specified
+	// Track whether we're in compact mode
+	const [isCompactMode, setIsCompactMode] = useState(false)
+	const containerRef = useRef<HTMLDivElement>(null)
+
+	// Setup resize observer to detect when we should switch to compact mode
 	useEffect(() => {
-		if (targetSection) {
-			const sectionObj = sections.find((section) => section.id === targetSection)
-			if (sectionObj && sectionObj.ref.current) {
-				// Use setTimeout to ensure the scroll happens after render
-				setTimeout(() => scrollToSection(sectionObj.ref), 500)
+		if (!containerRef.current) return
+
+		const observer = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				// If container width is less than 500px, switch to compact mode
+				setIsCompactMode(entry.contentRect.width < 500)
+			}
+		})
+
+		observer.observe(containerRef.current)
+
+		return () => {
+			observer?.disconnect()
+		}
+	}, [])
+
+	const sections: { id: SectionName; icon: LucideIcon }[] = useMemo(
+		() => [
+			{ id: "providers", icon: Webhook },
+			{ id: "autoApprove", icon: CheckCheck },
+			{ id: "browser", icon: SquareMousePointer },
+			{ id: "checkpoints", icon: GitBranch },
+			{ id: "notifications", icon: Bell },
+			{ id: "contextManagement", icon: Database },
+			{ id: "terminal", icon: SquareTerminal },
+			{ id: "experimental", icon: FlaskConical },
+			{ id: "language", icon: Globe },
+			{ id: "mcp", icon: Server },
+			{ id: "about", icon: Info },
+		],
+		[], // No dependencies needed now
+	)
+
+	// Update target section logic to set active tab
+	useEffect(() => {
+		if (targetSection && sectionNames.includes(targetSection as SectionName)) {
+			setActiveTab(targetSection as SectionName)
+		}
+	}, [targetSection])
+
+	// Function to scroll the active tab into view for vertical layout
+	const scrollToActiveTab = useCallback(() => {
+		const activeTabElement = tabRefs.current[activeTab]
+
+		if (activeTabElement) {
+			activeTabElement.scrollIntoView({
+				behavior: "auto",
+				block: "nearest",
+			})
+		}
+	}, [activeTab])
+
+	// Effect to scroll when the active tab changes
+	useEffect(() => {
+		scrollToActiveTab()
+	}, [activeTab, scrollToActiveTab])
+
+	// Effect to scroll when the webview becomes visible
+	useLayoutEffect(() => {
+		const handleMessage = (event: MessageEvent) => {
+			const message = event.data
+			if (message.type === "action" && message.action === "didBecomeVisible") {
+				scrollToActiveTab()
 			}
 		}
-	}, [targetSection, sections])
+
+		window.addEventListener("message", handleMessage)
+
+		return () => {
+			window.removeEventListener("message", handleMessage)
+		}
+	}, [scrollToActiveTab])
 
 	return (
 		<Tab>
 			<TabHeader className="flex justify-between items-center gap-2">
 				<div className="flex items-center gap-1">
 					<h3 className="text-vscode-foreground m-0">{t("settings:header.title")}</h3>
-					<DropdownMenu>
-						<DropdownMenuTrigger asChild>
-							<Button variant="ghost" size="icon" className="w-6 h-6">
-								<CaretSortIcon />
-							</Button>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent align="start" side="bottom">
-							{sections.map(({ id, icon: Icon, ref }) => (
-								<DropdownMenuItem
-									key={id}
-									onClick={() => {
-										if (id === "mcp") return checkUnsaveChanges(onOpenMcp)
-										scrollToSection(ref)
-									}}>
-									<Icon />
-									<span>{t(`settings:sections.${id}`)}</span>
-								</DropdownMenuItem>
-							))}
-						</DropdownMenuContent>
-					</DropdownMenu>
 				</div>
 				<div className="flex gap-2">
 					<Button
@@ -424,139 +476,221 @@ const SettingsView = forwardRef<SettingsViewRef, SettingsViewProps>(({ onDone, o
 				</div>
 			</TabHeader>
 
-			<TabContent className="p-0 divide-y divide-vscode-sideBar-background">
-				<div ref={providersRef}>
-					<SectionHeader>
-						<div className="flex items-center gap-2">
-							<Webhook className="w-4" />
-							<div>{t("settings:sections.providers")}</div>
+			{/* Vertical tabs layout */}
+			<div ref={containerRef} className={cn(settingsTabsContainer, isCompactMode && "narrow")}>
+				{/* Tab sidebar */}
+				<TabList
+					value={activeTab}
+					onValueChange={(value) => handleTabChange(value as SectionName)}
+					className={cn(settingsTabList)}
+					data-compact={isCompactMode}
+					data-testid="settings-tab-list">
+					{sections.map(({ id, icon: Icon }) => {
+						const isSelected = id === activeTab
+						const onSelect = () => handleTabChange(id)
+
+						// Base TabTrigger component definition
+						// We pass isSelected manually for styling, but onSelect is handled conditionally
+						const triggerComponent = (
+							<TabTrigger
+								ref={(element) => (tabRefs.current[id] = element)}
+								value={id}
+								isSelected={isSelected} // Pass manually for styling state
+								className={cn(
+									isSelected // Use manual isSelected for styling
+										? `${settingsTabTrigger} ${settingsTabTriggerActive}`
+										: settingsTabTrigger,
+									"focus:ring-0", // Remove the focus ring styling
+								)}
+								data-testid={`tab-${id}`}
+								data-compact={isCompactMode}>
+								<div className={cn("flex items-center gap-2", isCompactMode && "justify-center")}>
+									<Icon className="w-4 h-4" />
+									<span className="tab-label">
+										{id === "mcp"
+											? t(`kilocode:settings.sections.mcp`)
+											: t(`settings:sections.${id}`)}
+									</span>
+								</div>
+							</TabTrigger>
+						)
+
+						if (isCompactMode) {
+							// Wrap in Tooltip and manually add onClick to the trigger
+							return (
+								<TooltipProvider key={id} delayDuration={0}>
+									<Tooltip>
+										<TooltipTrigger asChild onClick={onSelect}>
+											{/* Clone to avoid ref issues if triggerComponent itself had a key */}
+											{React.cloneElement(triggerComponent)}
+										</TooltipTrigger>
+										<TooltipContent side="right" className="text-base">
+											<p className="m-0">
+												{id === "mcp"
+													? t(`kilocode:settings.sections.mcp`)
+													: t(`settings:sections.${id}`)}
+											</p>
+										</TooltipContent>
+									</Tooltip>
+								</TooltipProvider>
+							)
+						} else {
+							// Render trigger directly; TabList will inject onSelect via cloning
+							// Ensure the element passed to TabList has the key
+							return React.cloneElement(triggerComponent, { key: id })
+						}
+					})}
+				</TabList>
+
+				{/* Content area */}
+				<TabContent className="p-0 flex-1 overflow-auto">
+					{/* Providers Section */}
+					{activeTab === "providers" && (
+						<div>
+							<SectionHeader>
+								<div className="flex items-center gap-2">
+									<Webhook className="w-4" />
+									<div>{t("settings:sections.providers")}</div>
+								</div>
+							</SectionHeader>
+
+							<Section>
+								<ApiConfigManager
+									currentApiConfigName={currentApiConfigName}
+									listApiConfigMeta={listApiConfigMeta}
+									onSelectConfig={(configName: string) =>
+										checkUnsaveChanges(() =>
+											vscode.postMessage({ type: "loadApiConfiguration", text: configName }),
+										)
+									}
+									onDeleteConfig={(configName: string) =>
+										vscode.postMessage({ type: "deleteApiConfiguration", text: configName })
+									}
+									onRenameConfig={(oldName: string, newName: string) => {
+										vscode.postMessage({
+											type: "renameApiConfiguration",
+											values: { oldName, newName },
+											apiConfiguration,
+										})
+										prevApiConfigName.current = newName
+									}}
+									onUpsertConfig={(configName: string) =>
+										vscode.postMessage({
+											type: "upsertApiConfiguration",
+											text: configName,
+											apiConfiguration,
+										})
+									}
+								/>
+								<ApiOptions
+									uriScheme={uriScheme}
+									apiConfiguration={apiConfiguration}
+									setApiConfigurationField={setApiConfigurationField}
+									errorMessage={errorMessage}
+									setErrorMessage={setErrorMessage}
+								/>
+							</Section>
 						</div>
-					</SectionHeader>
+					)}
 
-					<Section>
-						<ApiConfigManager
-							currentApiConfigName={currentApiConfigName}
-							listApiConfigMeta={listApiConfigMeta}
-							onSelectConfig={(configName: string) =>
-								checkUnsaveChanges(() =>
-									vscode.postMessage({ type: "loadApiConfiguration", text: configName }),
-								)
-							}
-							onDeleteConfig={(configName: string) =>
-								vscode.postMessage({ type: "deleteApiConfiguration", text: configName })
-							}
-							onRenameConfig={(oldName: string, newName: string) => {
-								vscode.postMessage({
-									type: "renameApiConfiguration",
-									values: { oldName, newName },
-									apiConfiguration,
-								})
-								prevApiConfigName.current = newName
-							}}
-							onUpsertConfig={(configName: string) =>
-								vscode.postMessage({
-									type: "upsertApiConfiguration",
-									text: configName,
-									apiConfiguration,
-								})
-							}
+					{/* Auto-Approve Section */}
+					{activeTab === "autoApprove" && (
+						<AutoApproveSettings
+							showAutoApproveMenu={showAutoApproveMenu} // kilocode_change
+							alwaysAllowReadOnly={alwaysAllowReadOnly}
+							alwaysAllowReadOnlyOutsideWorkspace={alwaysAllowReadOnlyOutsideWorkspace}
+							alwaysAllowWrite={alwaysAllowWrite}
+							alwaysAllowWriteOutsideWorkspace={alwaysAllowWriteOutsideWorkspace}
+							writeDelayMs={writeDelayMs}
+							alwaysAllowBrowser={alwaysAllowBrowser}
+							alwaysApproveResubmit={alwaysApproveResubmit}
+							requestDelaySeconds={requestDelaySeconds}
+							alwaysAllowMcp={alwaysAllowMcp}
+							alwaysAllowModeSwitch={alwaysAllowModeSwitch}
+							alwaysAllowSubtasks={alwaysAllowSubtasks}
+							alwaysAllowExecute={alwaysAllowExecute}
+							allowedCommands={allowedCommands}
+							setCachedStateField={setCachedStateField}
 						/>
-						<ApiOptions
-							uriScheme={uriScheme}
-							apiConfiguration={apiConfiguration}
-							setApiConfigurationField={setApiConfigurationField}
-							errorMessage={errorMessage}
-							setErrorMessage={setErrorMessage}
+					)}
+
+					{/* Browser Section */}
+					{activeTab === "browser" && (
+						<BrowserSettings
+							browserToolEnabled={browserToolEnabled}
+							browserViewportSize={browserViewportSize}
+							screenshotQuality={screenshotQuality}
+							remoteBrowserHost={remoteBrowserHost}
+							remoteBrowserEnabled={remoteBrowserEnabled}
+							setCachedStateField={setCachedStateField}
 						/>
-					</Section>
-				</div>
+					)}
 
-				<div ref={autoApproveRef}>
-					<AutoApproveSettings
-						showAutoApproveMenu={showAutoApproveMenu} // kilocode_change
-						alwaysAllowReadOnly={alwaysAllowReadOnly}
-						alwaysAllowReadOnlyOutsideWorkspace={alwaysAllowReadOnlyOutsideWorkspace}
-						alwaysAllowWrite={alwaysAllowWrite}
-						alwaysAllowWriteOutsideWorkspace={alwaysAllowWriteOutsideWorkspace}
-						writeDelayMs={writeDelayMs}
-						alwaysAllowBrowser={alwaysAllowBrowser}
-						alwaysApproveResubmit={alwaysApproveResubmit}
-						requestDelaySeconds={requestDelaySeconds}
-						alwaysAllowMcp={alwaysAllowMcp}
-						alwaysAllowModeSwitch={alwaysAllowModeSwitch}
-						alwaysAllowSubtasks={alwaysAllowSubtasks}
-						alwaysAllowExecute={alwaysAllowExecute}
-						allowedCommands={allowedCommands}
-						setCachedStateField={setCachedStateField}
-					/>
-				</div>
+					{/* Checkpoints Section */}
+					{activeTab === "checkpoints" && (
+						<CheckpointSettings
+							enableCheckpoints={enableCheckpoints}
+							setCachedStateField={setCachedStateField}
+						/>
+					)}
 
-				<div ref={browserRef}>
-					<BrowserSettings
-						browserToolEnabled={browserToolEnabled}
-						browserViewportSize={browserViewportSize}
-						screenshotQuality={screenshotQuality}
-						remoteBrowserHost={remoteBrowserHost}
-						remoteBrowserEnabled={remoteBrowserEnabled}
-						setCachedStateField={setCachedStateField}
-					/>
-				</div>
+					{/* Notifications Section */}
+					{activeTab === "notifications" && (
+						<NotificationSettings
+							ttsEnabled={ttsEnabled}
+							ttsSpeed={ttsSpeed}
+							soundEnabled={soundEnabled}
+							soundVolume={soundVolume}
+							setCachedStateField={setCachedStateField}
+						/>
+					)}
 
-				<div ref={checkpointsRef}>
-					<CheckpointSettings
-						enableCheckpoints={enableCheckpoints}
-						setCachedStateField={setCachedStateField}
-					/>
-				</div>
+					{/* Context Management Section */}
+					{activeTab === "contextManagement" && (
+						<ContextManagementSettings
+							maxOpenTabsContext={maxOpenTabsContext}
+							maxWorkspaceFiles={maxWorkspaceFiles ?? 200}
+							showRooIgnoredFiles={showRooIgnoredFiles}
+							maxReadFileLine={maxReadFileLine}
+							setCachedStateField={setCachedStateField}
+						/>
+					)}
 
-				<div ref={notificationsRef}>
-					<NotificationSettings
-						ttsEnabled={ttsEnabled}
-						ttsSpeed={ttsSpeed}
-						soundEnabled={soundEnabled}
-						soundVolume={soundVolume}
-						setCachedStateField={setCachedStateField}
-					/>
-				</div>
+					{/* Terminal Section */}
+					{activeTab === "terminal" && (
+						<TerminalSettings
+							terminalOutputLineLimit={terminalOutputLineLimit}
+							terminalShellIntegrationTimeout={terminalShellIntegrationTimeout}
+							terminalShellIntegrationDisabled={terminalShellIntegrationDisabled}
+							terminalCommandDelay={terminalCommandDelay}
+							terminalPowershellCounter={terminalPowershellCounter}
+							terminalZshClearEolMark={terminalZshClearEolMark}
+							terminalZshOhMy={terminalZshOhMy}
+							terminalZshP10k={terminalZshP10k}
+							terminalZdotdir={terminalZdotdir}
+							terminalCompressProgressBar={terminalCompressProgressBar}
+							setCachedStateField={setCachedStateField}
+						/>
+					)}
 
-				<div ref={contextManagementRef}>
-					<ContextManagementSettings
-						maxOpenTabsContext={maxOpenTabsContext}
-						maxWorkspaceFiles={maxWorkspaceFiles ?? 200}
-						showRooIgnoredFiles={showRooIgnoredFiles}
-						maxReadFileLine={maxReadFileLine}
-						setCachedStateField={setCachedStateField}
-					/>
-				</div>
+					{/* Experimental Section */}
+					{activeTab === "experimental" && (
+						<ExperimentalSettings setExperimentEnabled={setExperimentEnabled} experiments={experiments} />
+					)}
 
-				<div ref={terminalRef}>
-					<TerminalSettings
-						terminalOutputLineLimit={terminalOutputLineLimit}
-						terminalShellIntegrationTimeout={terminalShellIntegrationTimeout}
-						terminalShellIntegrationDisabled={terminalShellIntegrationDisabled}
-						terminalCommandDelay={terminalCommandDelay}
-						terminalPowershellCounter={terminalPowershellCounter}
-						terminalZshClearEolMark={terminalZshClearEolMark}
-						terminalZshOhMy={terminalZshOhMy}
-						terminalZshP10k={terminalZshP10k}
-						terminalZdotdir={terminalZdotdir}
-						terminalCompressProgressBar={terminalCompressProgressBar}
-						setCachedStateField={setCachedStateField}
-					/>
-				</div>
+					{/* Language Section */}
+					{activeTab === "language" && (
+						<LanguageSettings language={language || "en"} setCachedStateField={setCachedStateField} />
+					)}
 
-				<div ref={experimentalRef}>
-					<ExperimentalSettings setExperimentEnabled={setExperimentEnabled} experiments={experiments} />
-				</div>
+					{/* About Section */}
+					{activeTab === "about" && <About version={version} />}
 
-				<div ref={languageRef}>
-					<LanguageSettings language={language || "en"} setCachedStateField={setCachedStateField} />
-				</div>
-
-				<div ref={aboutRef}>
-					<About version={extensionState.version} />
-				</div>
-			</TabContent>
+					{/* kilocode_change */}
+					{/* MCP Section */}
+					{activeTab === "mcp" && <McpView />}
+				</TabContent>
+			</div>
 
 			<AlertDialog open={isDiscardDialogShow} onOpenChange={setDiscardDialogShow}>
 				<AlertDialogContent>

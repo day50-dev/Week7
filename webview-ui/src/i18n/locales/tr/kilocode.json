@@ -13,5 +13,10 @@
 		"toolRequest": "Araç isteği onay bekliyor",
 		"browserAction": "Tarayıcı eylemi onay bekliyor",
 		"command": "Komut onay bekliyor"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "MCP Sunucuları"
+		}
 	}
 }

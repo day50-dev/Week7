@@ -1089,10 +1089,12 @@ const ChatTextArea = forwardRef<HTMLTextAreaElement, ChatTextAreaProps>(
 								onScroll={() => updateHighlights()}
 							/>
 							{/* kilocode_change {Transparent overlay at bottom of textArea to avoid text overlap } */}
-							<div
-								className="absolute bottom-[1px] left-2 right-2 h-16 bg-gradient-to-t from-[var(--vscode-input-background)] via-[var(--vscode-input-background)] to-transparent pointer-events-none z-[2]"
-								aria-hidden="true"
-							/>
+							{!textAreaDisabled && (
+								<div
+									className="absolute bottom-[1px] left-2 right-2 h-16 bg-gradient-to-t from-[var(--vscode-input-background)] via-[var(--vscode-input-background)] to-transparent pointer-events-none z-[2]"
+									aria-hidden="true"
+								/>
+							)}
 							{isTtsPlaying && (
 								<Button
 									variant="ghost"

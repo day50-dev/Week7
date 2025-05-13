@@ -13,5 +13,10 @@
 		"toolRequest": "Żądanie narzędzia oczekuje na zatwierdzenie",
 		"browserAction": "Akcja przeglądarki oczekuje na zatwierdzenie",
 		"command": "Polecenie oczekuje na zatwierdzenie"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "Serwery MCP"
+		}
 	}
 }

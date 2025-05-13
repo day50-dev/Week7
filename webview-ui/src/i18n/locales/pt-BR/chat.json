@@ -73,7 +73,7 @@
 	},
 	"scrollToBottom": "Rolar para o final do chat",
 	"about": "Gere, refatore e depure código com assistência de IA.<br />Confira nossa <DocsLink>documentação</DocsLink> para saber mais.",
-	"onboarding": "<strong>Sua lista de tarefas neste espaço de trabalho está vazia.</strong> Comece digitando uma tarefa abaixo. Não sabe como começar? Leia mais sobre o que o Roo pode fazer por você nos <DocsLink>documentos</DocsLink>.",
+	"onboarding": "<strong>Sua lista de tarefas neste espaço de trabalho está vazia.</strong> Comece digitando uma tarefa abaixo. Não sabe como começar? Leia mais sobre o que o Kilo Code pode fazer por você nos <DocsLink>documentos</DocsLink>.",
 	"rooTips": {
 		"boomerangTasks": {
 			"title": "Tarefas Bumerangue",
@@ -205,12 +205,12 @@
 		"copyToInput": "Copiar para entrada (ou Shift + clique)"
 	},
 	"announcement": {
-		"title": "🎉 Roo Code 3.15 Lançado",
-		"description": "Roo Code 3.15 traz novos recursos e melhorias baseados no seu feedback.",
+		"title": "🎉 Roo Code 3.16 Lançado",
+		"description": "Roo Code 3.16 traz novos recursos e melhorias baseados no seu feedback.",
 		"whatsNew": "O que há de novo",
-		"feature1": "<bold>Cache de prompts para Vertex</bold>: Adicionado suporte de cache de prompts para Vertex AI, melhorando tempos de resposta e reduzindo custos de API",
-		"feature2": "<bold>Fallback de Terminal</bold>: Implementado um mecanismo de fallback quando a integração de shell do terminal VSCode falha",
-		"feature3": "<bold>Snippets de código aprimorados</bold>: Renderização e interação aprimoradas de snippets de código na interface de chat",
+		"feature1": "<bold>Provedores de API Groq e Chutes</bold>: Adicionado suporte para provedores de API Groq e Chutes (obrigado @shariqriazz!)",
+		"feature2": "<bold>Referências de código clicáveis</bold>: Referências de código nas respostas do modelo agora navegam diretamente para as linhas de origem (obrigado @KJ7LNW!)",
+		"feature3": "<bold>Melhorias de estabilidade MCP</bold>: Corrigidos vários bugs para melhorar a estabilidade das integrações MCP",
 		"hideButton": "Ocultar anúncio",
 		"detailsDiscussLinks": "Obtenha mais detalhes e participe da discussão no <discordLink>Discord</discordLink> e <redditLink>Reddit</redditLink> 🚀"
 	},
@@ -236,10 +236,19 @@
 			"close": "Fechar navegador"
 		}
 	},
+	"codeblock": {
+		"tooltips": {
+			"expand": "Expandir bloco de código",
+			"collapse": "Recolher bloco de código",
+			"enable_wrap": "Ativar quebra de linha",
+			"disable_wrap": "Desativar quebra de linha",
+			"copy_code": "Copiar código"
+		}
+	},
 	"systemPromptWarning": "AVISO: Substituição personalizada de instrução do sistema ativa. Isso pode comprometer gravemente a funcionalidade e causar comportamento imprevisível.",
 	"shellIntegration": {
 		"title": "Aviso de execução de comando",
-		"description": "Seu comando está sendo executado sem a integração de shell do terminal VSCode. Para suprimir este aviso, você pode desativar a integração de shell na seção <strong>Terminal</strong> das <settingsLink>configurações do Roo Code</settingsLink> ou solucionar problemas de integração do terminal VSCode usando o link abaixo.",
+		"description": "Seu comando está sendo executado sem a integração de shell do terminal VSCode. Para suprimir este aviso, você pode desativar a integração de shell na seção <strong>Terminal</strong> das <settingsLink>configurações do Kilo Code</settingsLink> ou solucionar problemas de integração do terminal VSCode usando o link abaixo.",
 		"troubleshooting": "Clique aqui para a documentação de integração de shell."
 	}
 }

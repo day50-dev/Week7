@@ -13,5 +13,10 @@
 		"toolRequest": "Richiesta strumento in attesa di approvazione",
 		"browserAction": "Azione del browser in attesa di approvazione",
 		"command": "Comando in attesa di approvazione"
+	},
+	"settings": {
+		"sections": {
+			"mcp": "Server MCP"
+		}
 	}
 }
